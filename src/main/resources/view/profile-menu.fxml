@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../css/profileMenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfileMenuController">
+    <VBox layoutX="14.0" layoutY="65.0" prefHeight="359.0" prefWidth="399.0" spacing="5.0">
+        <HBox alignment="CENTER" prefHeight="72.0" prefWidth="379.0" spacing="10.0">
+            <Button fx:id="usernameButton" mnemonicParsing="false" onAction="#onClickUsernameButton" prefHeight="53.0" prefWidth="130.0" text="change username" />
+            <TextField fx:id="usernameField" />
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="55.0" prefWidth="399.0" spacing="10.0">
+            <Button fx:id="nicknameButton" mnemonicParsing="false" onAction="#onClickNicknameButton" prefHeight="50.0" prefWidth="127.0" text="change nickname" />
+            <TextField fx:id="nicknameField" />
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="55.0" prefWidth="900.0" spacing="10.0">
+            <Button fx:id="passwordButton" mnemonicParsing="false" onAction="#onClickPasswordButton" prefHeight="48.0" prefWidth="127.0" text="change password" />
+            <TextField fx:id="passwordField" />
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="62.0" prefWidth="399.0" spacing="35.0">
+            <Button fx:id="emailButton" mnemonicParsing="false" onAction="#onClickEmailButton" prefHeight="50.0" prefWidth="100.0" text="change email" />
+            <TextField fx:id="emailField" />
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="55.0" prefWidth="379.0" spacing="25.0">
+            <Button fx:id="questionButton" mnemonicParsing="false" onAction="#onClickQuestionButton" prefHeight="54.0" prefWidth="121.0" text="change question" />
+            <ChoiceBox fx:id="questionBox" prefWidth="150.0" />
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="55.0" prefWidth="399.0" spacing="20.0">
+            <Button fx:id="answerButton" mnemonicParsing="false" onAction="#onClickAnswerButton" prefHeight="69.0" prefWidth="111.0" text="change answer" />
+            <TextField fx:id="answerField" />
+        </HBox>
+    </VBox>
+   <Button layoutX="61.0" layoutY="439.0" mnemonicParsing="false" onAction="#onClickBackButton" prefHeight="87.0" prefWidth="127.0" text="back">
+      <font>
+         <Font size="32.0" />
+      </font>
+   </Button>
+</AnchorPane>

@@ -1,0 +1,58 @@
+/* settingMenu.css */
+
+.root {
+    -fx-font-family: "Arial";
+    -fx-background-image: url("../images/background4.jpg"); /* Dark background */
+    -fx-background-position: top;
+    -fx-text-fill: #ffffff; /* White text */
+}
+
+.label {
+    /*-fx-background-image: "";*/
+    -fx-text-fill: linear-gradient(to right, #d3a9f1, #ef84ef);
+    -fx-font-family: 'Arial', sans-serif;
+    -fx-font-size: 16px;
+}
+
+.slider {
+    -fx-control-inner-background: black;
+    -fx-background-color: black;
+    -fx-border-color: linear-gradient(to right, #0af50a, #ff15ff);
+    -fx-border-width: 2px;
+    -fx-text-fill: linear-gradient(to right, #00ff00, #ff00ff);
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.8) , 0,0,2,0 );
+}
+
+.choice-box {
+    -fx-background-color: black;
+    -fx-border-color: linear-gradient(to right, #00ff00, #ff00ff);
+    -fx-border-width: 2px;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.8) , 0,0,2,0 );
+}
+
+.button {
+    -fx-background-color: linear-gradient(to right, #00ff00, #ff00ff);
+    -fx-text-fill: black;
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.8) , 0,0,2,0 );
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #ff00ff, #00ff00);
+    -fx-text-fill: white;
+}
+
+.hbox {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-spacing: 10px;
+}
+
+.vbox {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-spacing: 10px;
+}

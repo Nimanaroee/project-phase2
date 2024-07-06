@@ -1,0 +1,152 @@
+/* historyMenu.css */
+
+.root {
+    -fx-font-family: "Arial";
+    -fx-background-image: url("../images/background3.jpg"); /* Dark background */
+    -fx-background-position: bottom;
+    -fx-text-fill: #ffffff; /* White text */
+}
+
+/* Applying dark mode colors to the AnchorPane */
+.anchor-pane {
+    -fx-background-color: #2c2c2c;
+}
+
+/* TableView Styles */
+.table-view {
+    -fx-background-color: #1e1e1e; /* Slightly lighter dark background */
+    -fx-border-color: #333333; /* Dark grey border */
+    -fx-border-width: 1px; /* Thin border */
+}
+
+.table-column-header {
+    -fx-background-color: #333333; /* Dark grey header background */
+    -fx-text-fill: #ffffff; /* White text */
+    -fx-font-size: 14px; /* Text size */
+    -fx-padding: 5; /* Padding inside header */
+}
+
+.table-cell {
+    -fx-padding: 5; /* Padding inside cell */
+    -fx-text-fill: #ffffff; /* White text */
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #242424; /* Slightly lighter for odd rows */
+}
+
+.table-row-cell:even {
+    -fx-background-color: #1e1e1e; /* Slightly lighter for even rows */
+}
+
+/* Styling the buttons with an image */
+.button {
+    -fx-background-image: url("../images/button3.png");
+    -fx-background-size: 120;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Styling the ChoiceBox for dark mode */
+.choice-box {
+    -fx-background-color: gray;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+
+/*!* General Styles *!*/
+/*.root {*/
+/*    -fx-font-family: "Arial";*/
+/*    -fx-background-color: #121212; !* Dark background *!*/
+/*    -fx-text-fill: #ffffff; !* White text *!*/
+/*}*/
+
+/*!* Button Styles *!*/
+/*.button {*/
+/*    -fx-background-color: #333333; !* Dark grey background *!*/
+/*    -fx-text-fill: #ffffff; !* White text *!*/
+/*    -fx-padding: 10 20 10 20; !* Padding around text *!*/
+/*    -fx-font-size: 14px; !* Text size *!*/
+/*    -fx-border-radius: 5; !* Rounded corners *!*/
+/*    -fx-background-radius: 5;*/
+/*    -fx-border-color: #555555; !* Grey border *!*/
+/*    -fx-border-width: 1px;*/
+/*}*/
+
+/*.button:hover {*/
+/*    -fx-background-color: #555555; !* Lighter grey on hover *!*/
+/*}*/
+
+/*!* Pane Styles *!*/
+/*.pane {*/
+/*    -fx-background-color: #1e1e1e; !* Slightly lighter dark background *!*/
+/*    -fx-border-color: #333333; !* Dark grey border *!*/
+/*    -fx-border-width: 1px; !* Thin border *!*/
+/*    -fx-border-radius: 5; !* Rounded corners *!*/
+/*    -fx-padding: 10; !* Padding inside pane *!*/
+/*}*/
+
+/*!* TableView Styles *!*/
+/*.table-view {*/
+/*    -fx-background-color: #1e1e1e; !* Slightly lighter dark background *!*/
+/*    -fx-border-color: #333333; !* Dark grey border *!*/
+/*    -fx-border-width: 1px; !* Thin border *!*/
+/*}*/
+
+/*.table-column-header {*/
+/*    -fx-background-color: #333333; !* Dark grey header background *!*/
+/*    -fx-text-fill: #ffffff; !* White text *!*/
+/*    -fx-font-size: 14px; !* Text size *!*/
+/*    -fx-padding: 5; !* Padding inside header *!*/
+/*}*/
+
+/*.table-cell {*/
+/*    -fx-padding: 5; !* Padding inside cell *!*/
+/*    -fx-text-fill: #ffffff; !* White text *!*/
+/*}*/
+
+/*.table-row-cell:odd {*/
+/*    -fx-background-color: #242424; !* Slightly lighter for odd rows *!*/
+/*}*/
+
+/*.table-row-cell:even {*/
+/*    -fx-background-color: #1e1e1e; !* Slightly lighter for even rows *!*/
+/*}*/
+
+/*!* ScrollBar Styles *!*/
+/*.scroll-bar {*/
+/*    -fx-background-color: #121212; !* Dark background for scroll bar *!*/
+/*    -fx-padding: 0.25em;*/
+/*}*/
+
+/*.scroll-bar:horizontal .thumb, .scroll-bar:vertical .thumb {*/
+/*    -fx-background-color: #555555; !* Thumb color *!*/
+/*}*/
+
+/*.scroll-bar:horizontal .track, .scroll-bar:vertical .track {*/
+/*    -fx-background-color: #333333; !* Track color *!*/
+/*}*/
+
+/*!* Custom Title Bar (if any) *!*/
+/*.title-bar {*/
+/*    -fx-background-color: #333333; !* Dark grey background *!*/
+/*    -fx-text-fill: #ffffff; !* White text *!*/
+/*    -fx-padding: 10; !* Padding *!*/
+/*}*/
+
+/*!* Additional Custom Styles *!*/
+/*.custom-label {*/
+/*    -fx-text-fill: #ffffff; !* White text *!*/
+/*    -fx-font-size: 16px; !* Larger text size *!*/
+/*}*/
+
+/*.custom-textfield {*/
+/*    -fx-background-color: #333333; !* Dark grey background *!*/
+/*    -fx-text-fill: #ffffff; !* White text *!*/
+/*    -fx-border-color: #555555; !* Grey border *!*/
+/*    -fx-border-radius: 5; !* Rounded corners *!*/
+/*    -fx-background-radius: 5;*/
+/*}*/
