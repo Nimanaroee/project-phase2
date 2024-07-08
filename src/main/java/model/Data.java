@@ -7,11 +7,12 @@ import java.util.ArrayList;
 
 public class Data {
     ////// logic
-    private static final ArrayList<User> users = new ArrayList<>();
-    private static final ArrayList<Card> cards = new ArrayList<>();
+    private static ArrayList<User> users = new ArrayList<>();
+    private static ArrayList<Card> cards = new ArrayList<>();
     private static final ArrayList<DataHistory> histories = new ArrayList<>();
     private static String loggedInUser1 = null;
     private static String loggedInUser2 = null;
+    public static GsonHandler gsonHandler = new GsonHandler();
 
 
     //// users
@@ -24,12 +25,17 @@ public class Data {
     }
     public static void removeUserByUsername(String username) {
         Data.users.remove(Data.getUserByUsername(username));
+        gsonHandler.saveUserGson();
     }
     public static void addUser(User user) {
         Data.users.add(user);
+        gsonHandler.saveUserGson();
     }
     public static void updateUser(User user) { Data.removeUserByUsername(user.getUsername()); Data.addUser(user); }
     public static ArrayList<User> getAllUser() {return Data.users;}
+    public static void setAllUsers(ArrayList<User> users) {
+        Data.users = users;
+    }
 
     //// logged in usernames
     public static User getLoggedInUser1() { return Data.getUserByUsername(loggedInUser1);}
@@ -45,16 +51,22 @@ public class Data {
         }
         return null;
     }
-    public static void removeCardByName(String name) { Data.cards.remove(Data.getCardByCardName(name)); }
-    public static void addCard(Card card) { Data.cards.add(card);}
+    public static void removeCardByName(String name) {
+        Data.cards.remove(Data.getCardByCardName(name));
+        gsonHandler.saveCardGson();
+    }
+    public static void addCard(Card card) {
+        Data.cards.add(card);
+        gsonHandler.saveCardGson();
+    }
     public static void updateCard(Card card) { Data.removeCardByName(card.name); Data.addCard(card); }
     public static ArrayList<Card> getAllCards() { return Data.cards; }
 
     //// data history
-    public static void addHistory(DataHistory dataHistory) {
-        Data.histories.add(dataHistory);
-    }
     public static ArrayList<DataHistory> getHistories() {
         return Data.histories;
+    }
+    public static void setAllCards(ArrayList<Card> cards) {
+        Data.cards = cards;
     }
 }

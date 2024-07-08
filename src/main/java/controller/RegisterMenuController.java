@@ -48,10 +48,10 @@ public class RegisterMenuController {
         //// initial captcha and other stuff
         /// address :
         /// src/main/resources/images/captcha.png
-        questionBoxField.getItems().add(" ");
-        questionBoxField.getItems().add(" ");
-        questionBoxField.getItems().add(" ");
-        questionBoxField.setValue(" ");
+        questionBoxField.getItems().add("• 1-What is your father’s name ?");
+        questionBoxField.getItems().add("• 2-What is your favourite color ?");
+        questionBoxField.getItems().add("• 3-What was the name of your first pet?");
+        questionBoxField.setValue("• 1-What is your father’s name ?");
 
         buildCaptcha();
 

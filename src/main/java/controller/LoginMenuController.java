@@ -6,6 +6,7 @@ import model.Data;
 import model.GraphicData;
 import model.User;
 import view.ForgetPasswordView;
+import view.MainMenuView;
 
 public class LoginMenuController {
 
@@ -18,7 +19,7 @@ public class LoginMenuController {
     @FXML
     protected PasswordField passwordField;
     @FXML
-    protected void onClickLoginButton() {
+    protected void onClickLoginButton() throws Exception {
         String username = usernameField.getText();
         String password = passwordField.getText();
         User user = Data.getUserByUsername(username);
@@ -36,6 +37,7 @@ public class LoginMenuController {
         }
         Data.setLoggedInUser1(user);
 
+        new MainMenuView().start(GraphicData.stage);
     }
     @FXML
     protected void onClickForgetPasswordButton() throws Exception {

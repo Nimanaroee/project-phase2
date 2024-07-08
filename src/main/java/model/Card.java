@@ -2,7 +2,7 @@ package model;
 
 import javafx.scene.shape.Rectangle;
 
-public class Card extends Rectangle {
+public class Card {
     String name;
     int attack;
     int duration;
@@ -13,7 +13,6 @@ public class Card extends Rectangle {
     int percentage;
 
     public Card(String name, int attack, int duration, int damage, int upgradeLevel, int upgradeCoast) {
-        super(100, 150);
         this.name = name;
         this.attack = attack;
         this.duration = duration;

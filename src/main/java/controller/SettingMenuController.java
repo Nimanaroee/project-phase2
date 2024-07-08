@@ -16,6 +16,7 @@ public class SettingMenuController {
 
     public void initialize() {
         volumeBar = new Slider(0, 1, 0.5);
+        volumeBar.setValue(1);
 
         ////// add background and sound and other stuff of box
 

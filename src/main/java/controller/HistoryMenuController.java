@@ -41,7 +41,7 @@ public class HistoryMenuController {
         sortByBox.getItems().add("opponent-level");
         sortByBox.setValue("date");
 
-        gameHistory = Data.getHistories();
+        gameHistory = Data.getLoggedInUser1().getHistories();
 
         startPoint = 0;
 
