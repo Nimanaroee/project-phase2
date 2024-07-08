@@ -23,7 +23,7 @@ public class ShopMenuController {
     public ScrollPane unlockedScrollPane;
 
 
-    public void initialize() {
+    private void initialize() {
 
         this.lockedCards = new ArrayList<>();
         this.unlockedCards = new ArrayList<>();
@@ -46,8 +46,6 @@ public class ShopMenuController {
         unlockedFlowPane.getChildren().addAll(createCardViews(unlockedCards, false));
         unlockedScrollPane = new ScrollPane(unlockedFlowPane);
         unlockedScrollPane.setFitToWidth(true);
-
-        System.out.println(this.lockedCards.size() + " ---- " + this.unlockedCards.size());
     }
 
     public FlowPane getLockedCardsPane() {
@@ -112,7 +110,7 @@ public class ShopMenuController {
             alert.setTitle("Card Information");
             alert.setHeaderText(card.getCard().getName());
             alert.setContentText(
-                    "Defence: " + card.getCard().getDefence() + "\n" +
+                    "Attack: " + card.getCard().getDefence() + "\n" +
                             "Damage: " + card.getCard().getDamage() + "\n" +
                             "Duration: " + card.getCard().getDuration() + "\n" +
                             "Upgrade Level: " + card.getCard().getUpgradeLevel() + "\n" +

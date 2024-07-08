@@ -12,9 +12,9 @@ public class Card {
     int price;
     int percentage;
 
-    public Card(String name, int attack, int duration, int damage, int upgradeLevel, int upgradeCoast) {
+    public Card(String name, int defence, int duration, int damage, int upgradeLevel, int upgradeCoast) {
         this.name = name;
-        this.defence = attack;
+        this.defence = defence;
         this.duration = duration;
         this.damage = damage;
         this.upgradeLevel = upgradeLevel;
@@ -100,7 +100,7 @@ public class Card {
         this.percentage += DataGame.updatePercentage;
         this.upgradeCost += DataGame.updateCost;
         this.damage = (int)(this.damage*(double)this.percentage/100.0);
-        this.defence = (int)(this.defence*(double)this.percentage/100.0);
+        this.defence = (int)(this.defence *(double)this.percentage/100.0);
 
         return this;
     }
