@@ -110,7 +110,7 @@ public class ShopMenuController {
             alert.setTitle("Card Information");
             alert.setHeaderText(card.getCard().getName());
             alert.setContentText(
-                    "Attack: " + card.getCard().getAttack() + "\n" +
+                    "Attack: " + card.getCard().getDefence() + "\n" +
                             "Damage: " + card.getCard().getDamage() + "\n" +
                             "Duration: " + card.getCard().getDuration() + "\n" +
                             "Upgrade Level: " + card.getCard().getUpgradeLevel() + "\n" +
