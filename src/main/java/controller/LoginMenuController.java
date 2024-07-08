@@ -35,6 +35,7 @@ public class LoginMenuController {
             errorAlert.showAndWait();
             return;
         }
+        System.out.println(user.getUsername());
         Data.setLoggedInUser1(user);
 
         new MainMenuView().start(GraphicData.stage);

@@ -4,11 +4,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.Data;
-import model.GraphicData;
-import model.GsonHandler;
+import model.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class RegisterMenuView extends Application {
     @Override
@@ -16,6 +15,11 @@ public class RegisterMenuView extends Application {
         Data.gsonHandler = new GsonHandler();
         Data.gsonHandler.readUserGSON();
         Data.gsonHandler.readCardGSON();
+
+        ArrayList<Card> cards = Data.getAllCards();
+        for(Card card : cards) {
+            System.out.println(card.getName() + " " + card.getPrice() + " " + card.getDefence());
+        }
 
         GraphicData.stage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(RegisterMenuView.class.getResource("register-menu.fxml"));

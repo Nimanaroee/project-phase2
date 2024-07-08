@@ -2,7 +2,10 @@ package model;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.*;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class GsonHandler {
@@ -45,18 +48,17 @@ public class GsonHandler {
     public void readCardGSON() {
         GsonBuilder builder = new GsonBuilder();
         gsonCard = builder.create();
+        ArrayList<Card> cards = new ArrayList<>();
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("src/main/resources/Gson/cards.json"));
-            ArrayList<Card> cards = new ArrayList<>();
-            String line = null;
-            while (true) {
-                line = bufferedReader.readLine();
-                if(line == null)
-                    break;
-                cards.add(gsonCard.fromJson(line, Card.class));
-            }
+            Type cardListType = new TypeToken<ArrayList<Card>>() {
+            }.getType();
+            cards = gsonCard.fromJson(bufferedReader, cardListType);
             Data.setAllCards(cards);
-        } catch (IOException e ) { e.printStackTrace();}
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
     public void saveCardGson() {
         GsonBuilder builder = new GsonBuilder();

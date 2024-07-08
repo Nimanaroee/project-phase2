@@ -4,7 +4,7 @@ import javafx.scene.shape.Rectangle;
 
 public class Card {
     String name;
-    int attack;
+    int defence;
     int duration;
     int damage;
     int upgradeLevel;
@@ -14,7 +14,7 @@ public class Card {
 
     public Card(String name, int attack, int duration, int damage, int upgradeLevel, int upgradeCoast) {
         this.name = name;
-        this.attack = attack;
+        this.defence = attack;
         this.duration = duration;
         this.damage = damage;
         this.upgradeLevel = upgradeLevel;
@@ -38,8 +38,8 @@ public class Card {
         this.name = name;
         Data.updateCard(this);
     }
-    public void setAttack(int attack) {
-        this.attack = attack;
+    public void setDefence(int defence) {
+        this.defence = defence;
         Data.updateCard(this);
     }
     public void setDuration(int duration) {
@@ -73,8 +73,8 @@ public class Card {
     public String getName() {
         return this.name;
     }
-    public int getAttack() {
-        return attack;
+    public int getDefence() {
+        return defence;
     }
     public int getDamage() {
         return damage;
@@ -100,7 +100,7 @@ public class Card {
         this.percentage += DataGame.updatePercentage;
         this.upgradeCost += DataGame.updateCost;
         this.damage = (int)(this.damage*(double)this.percentage/100.0);
-        this.attack = (int)(this.attack*(double)this.percentage/100.0);
+        this.defence = (int)(this.defence*(double)this.percentage/100.0);
 
         return this;
     }
