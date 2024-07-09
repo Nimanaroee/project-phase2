@@ -8,7 +8,7 @@ public class Card {
     private final int initialDefense;
 
     private final int width;
-    private final int shopCost;
+    private final int shopCost = 10;
     protected SpecialCardType type = SpecialCardType.NORMAL;
     private String name;
     private int damage;
@@ -25,7 +25,6 @@ public class Card {
         this.damage = initialDamage / (width + 1);
 
         this.defense = initialDefense;
-        this.shopCost = shopCost;
         this.width = width;
 //        System.out.println("Card created: " + name);
     }

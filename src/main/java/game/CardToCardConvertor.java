@@ -8,7 +8,10 @@ public class CardToCardConvertor {
 
 
     public static CardModel convertCardToCardModel(Card card) {
-        return new CardModel(card.getName(), card.getDamage(), card.getWidth(), card.getDefense(), 1, card.getShopCost());
+        return new CardModel(card.getName(), card.getDefense(), card.getWidth(), card.getDamage(), 1, card.getShopCost());
+        //CardModel(String name, int defence, int duration, int damage, int upgradeLevel, int upgradeCoast);
+        //Card(cardModel.getName(), 1, cardModel.getDamage(), cardModel.getDefence(), cardModel.getUpgradeCost(), cardModel.getDuration());
+        //Card(String name, int initialCost, int initialDamage, int initialDefense, int shopCost, int width)
     }
 
 
@@ -109,7 +112,7 @@ public class CardToCardConvertor {
                 }
 
             }
-            cards.add(convertCardModelToCard(cardModel));
+            cards.add(new Card(cardModel.getName(), 1, cardModel.getDamage(), cardModel.getDefence(), cardModel.getUpgradeCost(), cardModel.getDuration()));
         }
         return cards;
     }

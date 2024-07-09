@@ -12,6 +12,7 @@ import model.CardGraphic;
 import model.Data;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class GameMenuController {
@@ -83,7 +84,7 @@ public class GameMenuController {
             board1.add(new CardGraphic(CardToCardConvertor.convertCardToCardModel(card)));
         }
         player1boardHbox.getChildren().clear();
-        player1boardHbox.getChildren().addAll(createCardViews(board1, true));
+        player1boardHbox.getChildren().addAll(createCardViewsForBoard(board1, true));
         player1boardHbox.setSpacing(10);
         player1board.setContent(player1boardHbox);
         ArrayList<Card> player2Board = (ArrayList<Card>) game.getPlayer2Board();
@@ -95,7 +96,7 @@ public class GameMenuController {
             board2.add(new CardGraphic(CardToCardConvertor.convertCardToCardModel(card)));
         }
         player2boardHbox.getChildren().clear();
-        player2boardHbox.getChildren().addAll(createCardViews(board2, true));
+        player2boardHbox.getChildren().addAll(createCardViewsForBoard(board2, true));
         player2boardHbox.setSpacing(10);
         player2board.setContent(player2boardHbox);
         player1HP1.setText("HP: " + game.getPlayer1().getHealth());
@@ -106,12 +107,25 @@ public class GameMenuController {
     @FXML
     private void onClickEndTurnButton() {
         System.out.println("End Turn button clicked");
+
     }
 
     public ArrayList<VBox> createCardViews(ArrayList<CardGraphic> cards, boolean isLocked) {
         ArrayList<VBox> cardViews = new ArrayList<>();
         for (CardGraphic card : cards) {
             VBox cardBox = new VBox(card, createCardDetails(card));
+            cardBox.setOnMouseClicked(event -> handleMouseEvent(event, card, isLocked));
+            cardBox.setOnDragOver(event -> handleDragOver(event, card));
+            cardBox.setOnDragDropped(event -> handleDragDropped(event, card));
+            cardViews.add(cardBox);
+        }
+        return cardViews;
+    }
+
+    public ArrayList<VBox> createCardViewsForBoard(ArrayList<CardGraphic> cards, boolean isLocked) {
+        ArrayList<VBox> cardViews = new ArrayList<>();
+        for (CardGraphic card : cards) {
+            VBox cardBox = new VBox(card, createCardDetailsForBoard(card));
             cardBox.setOnMouseClicked(event -> handleMouseEvent(event, card, isLocked));
             cardBox.setOnDragOver(event -> handleDragOver(event, card));
             cardBox.setOnDragDropped(event -> handleDragDropped(event, card));
@@ -129,6 +143,15 @@ public class GameMenuController {
         } else {
             detailsBox.getChildren().add(new Label("Special Card"));
             detailsBox.getChildren().add(new Label("Type: " + (CardToCardConvertor.convertCardModelToCard(card.getCard())).getType().toString()));
+        }
+        return detailsBox;
+    }
+
+    public VBox createCardDetailsForBoard(CardGraphic card) {
+        VBox detailsBox = new VBox();
+        if (CardToCardConvertor.convertCardModelToCard(card.getCard()).getType() == Card.SpecialCardType.NORMAL) {
+            detailsBox.getChildren().add(new Label("damage: " + card.getCard().getDamage()));
+            detailsBox.getChildren().add(new Label("defence: " + card.getCard().getDefence()));
         }
         return detailsBox;
     }
@@ -167,67 +190,123 @@ public class GameMenuController {
             String draggedCardName = db.getString();
             CardGraphic draggedCard = findCardByName(draggedCardName);
             boolean durationIsOkay = true;
-
-            if (targetCard.getParent() instanceof HBox) {
-                HBox parent = (HBox) targetCard.getParent();
-                int targetIndex = parent.getChildren().indexOf(targetCard);
-                System.out.println(targetIndex);
-                for (int i = 0; i < draggedCard.getCard().getDuration(); i++) {
-                    if (targetIndex + i >= parent.getChildren().size() ||
-                            !isCardGraphicEmpty((VBox) parent.getChildren().get(targetIndex + i))) {
+            int board = 0;
+            int targetIndex;
+            targetIndex = board1.indexOf(targetCard);
+            board = 1;
+            if (targetIndex == -1) {
+                targetIndex = board2.indexOf(targetCard);
+                board = 2;
+            }
+            for (int i = 0; i < draggedCard.getCard().getDuration(); i++) {
+                if (board == 1) {
+                    if (!board1.get(targetIndex + i).getCard().getName().contains("empty")) {
                         durationIsOkay = false;
-                        System.out.println("Duration is not okay");
                         break;
                     }
-                }
-
-                if (durationIsOkay && draggedCard != null) {
-                    for (int i = 0; i < draggedCard.getCard().getDuration(); i++) {
-                        replaceCard((VBox) parent.getChildren().get(targetIndex + i), draggedCard);
-                    }
-                    success = true;
-                }
-            } else if (targetCard.getParent() instanceof VBox) {
-                VBox parent = (VBox) targetCard.getParent();
-                int targetIndex = parent.getChildren().indexOf(targetCard);
-                System.out.println(targetIndex);
-                for (int i = 0; i < draggedCard.getCard().getDuration(); i++) {
-                    if (targetIndex + i >= parent.getChildren().size() ||
-                            !isCardGraphicEmpty((VBox) parent.getChildren().get(targetIndex + i))) {
+                } else {
+                    if (!board2.get(targetIndex + i).getCard().getName().contains("empty")) {
+                        System.out.println("!" + board2.get(targetIndex + i).getCard().getName());
                         durationIsOkay = false;
-                        System.out.println("Duration is not okay");
                         break;
                     }
-                }
-
-                if (durationIsOkay && draggedCard != null) {
-                    for (int i = 0; i < draggedCard.getCard().getDuration(); i++) {
-                        replaceCard((VBox) parent.getChildren().get(targetIndex + i), draggedCard);
-                    }
-                    success = true;
                 }
             }
+            System.out.println(durationIsOkay);
+            if (!(CardToCardConvertor.convertCardModelToCard(draggedCard.getCard()).getType() == Card.SpecialCardType.NORMAL)) {
+                durationIsOkay = false;
+//                handleSpecialCardDragged(draggedCard, targetCard, board, targetIndex);
+            }
+            if (durationIsOkay && draggedCard != null) {
+                for (int i = 0; i < draggedCard.getCard().getDuration(); i++) {
+                    if (board == 1) {
+                        board1.set(targetIndex + i, draggedCard);
+                        game.getPlayer1Board().set(targetIndex + i, CardToCardConvertor.convertCardModelToCard(draggedCard.getCard()));
+                    } else {
+                        board2.set(targetIndex + i, draggedCard);
+                        game.getPlayer2Board().set(targetIndex + i, CardToCardConvertor.convertCardModelToCard(draggedCard.getCard()));
+                    }
+                }
+                if (board == 1) {
+                    for (int i = 0; i < game.getPlayer1Hand().size(); i++) {
+                        if (game.getPlayer1Hand().get(i).getName().equals(draggedCard.getCard().getName())) {
+                            game.getPlayer1Hand().remove(i);
+                            break;
+                        }
+                    }
+
+
+                } else {
+                    for (int i = 0; i < game.getPlayer2Hand().size(); i++) {
+                        if (game.getPlayer2Hand().get(i).getName().equals(draggedCard.getCard().getName())) {
+                            game.getPlayer2Hand().remove(i);
+                            break;
+                        }
+                    }
+                }
+                updateAll();
+                success = true;
+            }
+
         }
         event.setDropCompleted(success);
         event.consume();
     }
 
-    private boolean isCardGraphicEmpty(VBox vbox) {
-        if (vbox.getChildren().isEmpty()) {
-            return false;
+    private void updateAll() {
+        board1.clear();
+        board2.clear();
+        player1boardHbox.getChildren().clear();
+        player2boardHbox.getChildren().clear();
+        hand1.clear();
+        hand2.clear();
+        player1handHbox.getChildren().clear();
+        player2handHbox.getChildren().clear();
+        ArrayList<Card> player1Hand = (ArrayList<Card>) game.getPlayer1Hand();
+        for (Card card : player1Hand) {
+            hand1.add(new CardGraphic(CardToCardConvertor.convertCardToCardModel(card)));
         }
-        Node node = vbox.getChildren().get(0);
-        if (node instanceof CardGraphic) {
-            CardGraphic cardGraphic = (CardGraphic) node;
-            return cardGraphic.getCard().getName().equals("empty");
+        player1handHbox.getChildren().clear();
+        player1handHbox.getChildren().addAll(createCardViews(hand1, true));
+        player1handHbox.setSpacing(10);
+        player1hand.setContent(player1handHbox);
+        ArrayList<Card> player2Hand = (ArrayList<Card>) game.getPlayer2Hand();
+        for (Card card : player2Hand) {
+            hand2.add(new CardGraphic(CardToCardConvertor.convertCardToCardModel(card)));
         }
-        return false;
+        player2handHbox.getChildren().clear();
+        player2handHbox.getChildren().addAll(createCardViews(hand2, true));
+        player2handHbox.setSpacing(10);
+        player2hand.setContent(player2handHbox);
+        ArrayList<Card> player1Board = (ArrayList<Card>) game.getPlayer1Board();
+        for (Card card : player1Board) {
+            if (card == null) {
+                board1.add(new CardGraphic("empty"));
+                continue;
+            }
+            board1.add(new CardGraphic(CardToCardConvertor.convertCardToCardModel(card)));
+        }
+        player1boardHbox.getChildren().clear();
+        player1boardHbox.getChildren().addAll(createCardViewsForBoard(board1, true));
+        player1boardHbox.setSpacing(10);
+        player1board.setContent(player1boardHbox);
+        ArrayList<Card> player2Board = (ArrayList<Card>) game.getPlayer2Board();
+        for (Card card : player2Board) {
+            if (card == null) {
+                board2.add(new CardGraphic("empty"));
+                continue;
+            }
+            board2.add(new CardGraphic(CardToCardConvertor.convertCardToCardModel(card)));
+        }
+        player2boardHbox.getChildren().clear();
+        player2boardHbox.getChildren().addAll(createCardViewsForBoard(board2, true));
+        player2boardHbox.setSpacing(10);
+        player2board.setContent(player2boardHbox);
+        player1HP1.setText("HP: " + game.getPlayer1().getHealth());
+        player2HP.setText("HP: " + game.getPlayer2().getHealth());
+        Round.setText("Round: " + game.getCurrentRound());
     }
 
-    private void replaceCard(VBox targetVBox, CardGraphic newCard) {
-        targetVBox.getChildren().clear();
-        targetVBox.getChildren().add(newCard);
-    }
 
     private CardGraphic findCardByName(String name) {
         for (CardGraphic card : hand1) {
@@ -241,18 +320,6 @@ public class GameMenuController {
             }
         }
         return null;
-    }
-
-    private void replaceCard(CardGraphic targetCard, CardGraphic newCard) {
-        if (targetCard.getParent() instanceof HBox) {
-            HBox parent = (HBox) targetCard.getParent();
-            int index = parent.getChildren().indexOf(targetCard);
-            parent.getChildren().set(index, newCard);
-        } else if (targetCard.getParent() instanceof VBox) {
-            VBox parent = (VBox) targetCard.getParent();
-            int index = parent.getChildren().indexOf(targetCard);
-            parent.getChildren().set(index, newCard);
-        }
     }
 
 

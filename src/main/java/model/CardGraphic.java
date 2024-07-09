@@ -13,7 +13,7 @@ public class CardGraphic extends Rectangle {
     CardModel cardModel;
 
     public CardGraphic(CardModel cardModel) {
-        super(100, 150);
+        super(70, 100);
         this.cardModel = cardModel;
         this.name = cardModel.getName();
         try {
@@ -55,7 +55,7 @@ public class CardGraphic extends Rectangle {
     }
 
     public CardGraphic(String empty) {
-        super(100, 150);
+        super(70, 100);
         cardModel = new CardModel("empty", 0, 1, 0, 0, 0);
         setFill(Color.WHITE);
     }
