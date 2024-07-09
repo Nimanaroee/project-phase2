@@ -18,8 +18,19 @@ public class LoginMenuController {
     protected TextField usernameField;
     @FXML
     protected PasswordField passwordField;
+
+    private long lastTime = -1;
+    private int attempt = 0;
+
     @FXML
     protected void onClickLoginButton() throws Exception {
+        long now = System.currentTimeMillis();
+        if(now < lastTime+ attempt* 5000L) {
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setContentText("try "+ (int)(lastTime+ attempt* 5000L - now)/1000 +" seconds later !");
+            errorAlert.showAndWait();
+            return;
+        }
         String username = usernameField.getText();
         String password = passwordField.getText();
         User user = Data.getUserByUsername(username);
@@ -33,6 +44,9 @@ public class LoginMenuController {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setContentText("wrong password!");
             errorAlert.showAndWait();
+
+            lastTime = System.currentTimeMillis();
+            attempt++;
             return;
         }
         System.out.println(user.getUsername());
