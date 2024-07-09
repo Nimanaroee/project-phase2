@@ -44,7 +44,7 @@ public class Game {
     }
 
 
-    private boolean isGameOver() {
+    public boolean isGameOver() {
         return player1.getHealth() <= 0 || player2.getHealth() <= 0;
     }
 
@@ -62,11 +62,6 @@ public class Game {
 
     private void playRound() {
 
-        System.out.println("-----------------------");
-        System.out.println("current round: " + currentRound);
-        System.out.println("-----------------------");
-
-        System.out.println("\n-----------------------");
         player1.drawCard();
         player2.drawCard();
         player1.playTurn(gameBoard, coinManager);
@@ -77,8 +72,7 @@ public class Game {
         currentRound++;
     }
 
-    private void endOfTheRound() {
-        System.out.println("End of round!");
+    public void endOfTheRound() {
         endOfTurn(player1, player2, gameBoard);
         currentRound = 0;
     }
@@ -168,4 +162,7 @@ public class Game {
         return gameBoard.getBoard(player2);
     }
 
+    public GameBoard getGameBoard() {
+        return gameBoard;
+    }
 }
