@@ -29,11 +29,7 @@
    </VBox>
    <Button fx:id="startButton" layoutX="161.0" layoutY="276.0" mnemonicParsing="false" onAction="#onClickStartGameButton" prefHeight="68.0" prefWidth="128.0" text="Start game" />
    <Button layoutX="-11.0" layoutY="544.0" mnemonicParsing="false" onAction="#onClickBackButton" prefHeight="68.0" prefWidth="128.0" text="back" />
-   <Label layoutX="464.0" layoutY="79.0" prefHeight="26.0" prefWidth="39.0" text="user1 " textFill="WHITE">
-      <font>
-         <Font size="64.0" />
-      </font>
-   </Label>
+   <Label layoutX="464.0" layoutY="79.0" prefHeight="26.0" prefWidth="39.0" text="user1 " textFill="WHITE" />
    <Label layoutX="713.0" layoutY="84.0" text="user2" textFill="WHITE" />
    <ImageView fx:id="imageFirst" fitHeight="150.0" fitWidth="150.0" layoutX="407.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true" />
    <ImageView fx:id="imageSecond" fitHeight="150.0" fitWidth="150.0" layoutX="659.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true" />

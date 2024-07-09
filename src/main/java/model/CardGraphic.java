@@ -1,5 +1,6 @@
 package model;
 
+import controller.GameMenuController;
 import javafx.scene.image.Image;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
@@ -9,6 +10,7 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 public class CardGraphic extends Rectangle {
+    public static GameMenuController controller = new GameMenuController();
     public String name;
     CardModel cardModel;
     int H1 = 50, H2 = 90;
@@ -48,6 +50,7 @@ public class CardGraphic extends Rectangle {
             Dragboard db = event.getDragboard();
             boolean success = false;
             if (db.hasString()) {
+                controller.handleDragDropped(event, this);
                 success = true;
             }
             event.setDropCompleted(success);

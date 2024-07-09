@@ -72,7 +72,7 @@ public class GameMenuController {
 
     @FXML
     private void initialize() {
-
+        CardGraphic.controller = this;
         playingPlayer = game.getPlayer1();
         ArrayList<Card> player1Hand = (ArrayList<Card>) game.getPlayer1Hand();
         for (Card card : player1Hand) {
@@ -190,6 +190,7 @@ public class GameMenuController {
     public ArrayList<VBox> createCardViews(ArrayList<CardGraphic> cards, boolean isLocked) {
         ArrayList<VBox> cardViews = new ArrayList<>();
         for (CardGraphic card : cards) {
+
             VBox cardBox = new VBox(card, createCardDetails(card));
             cardBox.setOnMouseClicked(event -> handleMouseEvent(event, card, isLocked));
             cardBox.setOnDragOver(event -> handleDragOver(event, card));
@@ -202,10 +203,12 @@ public class GameMenuController {
     public ArrayList<VBox> createCardViewsForBoard(ArrayList<CardGraphic> cards, boolean isLocked) {
         ArrayList<VBox> cardViews = new ArrayList<>();
         for (CardGraphic card : cards) {
+//            if (!card.getCard().getName().equals("empty"))
+//                System.out.println(card.getCard().getName());
             VBox cardBox = new VBox(card, createCardDetailsForBoard(card));
             cardBox.setOnMouseClicked(event -> handleMouseEvent(event, card, isLocked));
             cardBox.setOnDragOver(event -> handleDragOver(event, card));
-            cardBox.setOnDragDropped(event -> handleDragDropped(event, card)); // Ensure this is set for all cards
+            cardBox.setOnDragDropped(event -> handleDragDropped(event, card));
             cardViews.add(cardBox);
         }
         return cardViews;
@@ -255,15 +258,21 @@ public class GameMenuController {
     }
 
     public void handleDragOver(DragEvent event, CardGraphic targetCard) {
+//        System.out.println("Drag Over on: " + targetCard.getCard().getName()); // Debugging
+//        System.out.println("Source: " + event.getGestureSource()); // Debugging
+//        System.out.println("Dragboard has string: " + event.getDragboard().hasString()); // Debugging
         if (event.getGestureSource() != targetCard && event.getDragboard().hasString()) {
+//            System.out.println("Accepting transfer modes"); // Debugging
             event.acceptTransferModes(TransferMode.MOVE);
         }
         event.consume();
+
+
     }
 
-    private void handleDragDropped(DragEvent event, CardGraphic targetCard) {
-        System.out.println("fuckin help me");
-        System.out.println(targetCard.getCard().getName());
+    public void handleDragDropped(DragEvent event, CardGraphic targetCard) {
+        System.out.println("Drag Dropped on: " + targetCard.getCard().getName());
+//        System.out.println(targetCard.getCard().getName());
         Dragboard db = event.getDragboard();
         boolean success = false;
 
@@ -286,7 +295,7 @@ public class GameMenuController {
                 }
             } else {
                 if (!board2.get(targetIndex + i).getCard().getName().contains("empty")) {
-                    System.out.println("!" + board2.get(targetIndex + i).getCard().getName());
+//                    System.out.println("!" + board2.get(targetIndex + i).getCard().getName());
                     durationIsOkay = false;
                     break;
                 }
@@ -334,6 +343,7 @@ public class GameMenuController {
             System.out.println("special");
             SpecialCard playedCard = (SpecialCard) CardToCardConvertor.convertCardModelToCard(draggedCard.getCard());
             if (playingPlayer == game.getPlayer1()) {
+                System.out.println("here");
                 playedCard.play(game.getGameBoard(), targetIndex, game.getPlayer1(), game.getPlayer2());
                 for (int i = 0; i < game.getPlayer1Hand().size(); i++) {
                     if (game.getPlayer1Hand().get(i).getName().equals(draggedCard.getCard().getName())) {
@@ -430,7 +440,7 @@ public class GameMenuController {
     }
 
     private void moveTimelineIndicator() {
-        double stepSize = player1boardHbox.getWidth() / game.getPlayer1Board().size();
+        double stepSize = player1boardHbox.getWidth() / game.getPlayer1Board().size() + 4;
         Timeline timeline = new Timeline();
         for (int i = 0; i < game.getPlayer1Board().size(); i++) {
             final int index = i;

@@ -90,8 +90,10 @@ public class GameBoard {
 
     public Card getCard(Player player, int position) {
         if (player == player1) {
+            System.out.println(player1Board.get(position));
             return player1Board.get(position);
         } else {
+            System.out.println(player2Board.get(position));
             return player2Board.get(position);
         }
     }
@@ -99,8 +101,10 @@ public class GameBoard {
 
     public Card getOpossingCard(Player player1, Player player2, Card card) {
         if (player1 == this.player1) {
+            System.out.println(player1Board.indexOf(card));
             return player2Board.get(player1Board.indexOf(card));
         } else {
+            System.out.println(player2Board.indexOf(card));
             return player1Board.get(player2Board.indexOf(card));
         }
 
@@ -119,7 +123,7 @@ public class GameBoard {
         System.out.println("Player 1:");
         for (int i = 0; i < 20; i++) {
             if (player1Board.get(i) != null) {
-                System.out.print(player1Board.get(i).getName() + "||");
+                System.out.print(player1Board.get(i).getName() + " " + i + "||");
             } else {
                 System.out.print("empty||");
             }
@@ -127,7 +131,7 @@ public class GameBoard {
         System.out.println("\nPlayer 2:");
         for (int i = 0; i < 20; i++) {
             if (player2Board.get(i) != null) {
-                System.out.print(player2Board.get(i).getName() + "||");
+                System.out.print(player2Board.get(i).getName() + " " + i + "||");
             } else {
                 System.out.print("empty||");
             }

@@ -21,18 +21,19 @@ public class SpecialCard extends Card {
     public void play(GameBoard board, int position, Player playingPlayer, Player effectedPlayer) {
         switch (type) {
             case BOMB:
-                for (int k = 0; k < this.getWidth(); k++) {
+                for (int k = position; k < this.getWidth() + position; k++) {
                     Card card = board.getCard(effectedPlayer, k);
+
                     if (card == null) {
                         continue;
                     }
-                    card.setDefense(card.getDefense() - this.attack);
+
                     if (card.getDefense() <= 0)
                         board.getBoard(effectedPlayer).remove(k);
                 }
                 break;
             case SHIELD:
-                for (int k = 0; k < this.getWidth(); k++) {
+                for (int k = position; k < position + this.getWidth(); k++) {
                     Card card = board.getCard(playingPlayer, k);
                     if (card == null) {
                         continue;
