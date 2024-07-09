@@ -1,6 +1,7 @@
 package model;
 
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
@@ -13,13 +14,23 @@ public class CardGraphic extends Rectangle {
         this.cardModel = cardModel;
         this.name = cardModel.getName();
         try {
-            String imageName = cardModel.getName().substring(1);
-            Image image = new Image("file:src/main/resources/images/cards/" + imageName + ".jpg");        //imageView.setSmooth(true);
-            ImagePattern imagePattern = new ImagePattern(image);
-            setFill(imagePattern);
+            if (cardModel.getName().equals("Block")) {
+                setFill(Color.RED);
+            } else {
+                String imageName = cardModel.getName().substring(1);
+                Image image = new Image("file:src/main/resources/images/cards/" + imageName + ".jpg");        //imageView.setSmooth(true);
+                ImagePattern imagePattern = new ImagePattern(image);
+                setFill(imagePattern);
+            }
         } catch (Exception e) {
             e.printStackTrace(System.out);
         }
+    }
+
+    public CardGraphic(String empty) {
+        super(100, 150);
+        cardModel = new CardModel("empty", 0, 1, 0, 0, 0);
+        setFill(Color.WHITE);
     }
 
     public CardModel getCard() {

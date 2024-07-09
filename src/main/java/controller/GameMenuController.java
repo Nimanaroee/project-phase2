@@ -54,6 +54,8 @@ public class GameMenuController {
 
     @FXML
     private Label player1HP1;
+    @FXML
+    private Label Round;
 
     @FXML
     private void initialize() {
@@ -65,6 +67,41 @@ public class GameMenuController {
         player1handHbox.getChildren().addAll(createCardViews(hand1, true));
         player1handHbox.setSpacing(10);
         player1hand.setContent(player1handHbox);
+        ArrayList<Card> player2Hand = (ArrayList<Card>) game.getPlayer2Hand();
+        for (Card card : player2Hand) {
+            hand2.add(new CardGraphic(CardToCardConvertor.convertCardToCardModel(card)));
+        }
+        player2handHbox.getChildren().clear();
+        player2handHbox.getChildren().addAll(createCardViews(hand2, true));
+        player2handHbox.setSpacing(10);
+        player2hand.setContent(player2handHbox);
+        ArrayList<Card> player1Board = (ArrayList<Card>) game.getPlayer1Board();
+        for (Card card : player1Board) {
+            if (card == null) {
+                board1.add(new CardGraphic("empty"));
+                continue;
+            }
+            board1.add(new CardGraphic(CardToCardConvertor.convertCardToCardModel(card)));
+        }
+        player1boardHbox.getChildren().clear();
+        player1boardHbox.getChildren().addAll(createCardViews(board1, true));
+        player1boardHbox.setSpacing(10);
+        player1board.setContent(player1boardHbox);
+        ArrayList<Card> player2Board = (ArrayList<Card>) game.getPlayer2Board();
+        for (Card card : player2Board) {
+            if (card == null) {
+                board2.add(new CardGraphic("empty"));
+                continue;
+            }
+            board2.add(new CardGraphic(CardToCardConvertor.convertCardToCardModel(card)));
+        }
+        player2boardHbox.getChildren().clear();
+        player2boardHbox.getChildren().addAll(createCardViews(board2, true));
+        player2boardHbox.setSpacing(10);
+        player2board.setContent(player2boardHbox);
+        player1HP1.setText("HP: " + game.getPlayer1().getHealth());
+        player2HP.setText("HP: " + game.getPlayer2().getHealth());
+        Round.setText("Round: " + game.getCurrentRound());
 
 
     }
@@ -138,5 +175,6 @@ public class GameMenuController {
             );
             alert.showAndWait();
         }
+
     }
 }
