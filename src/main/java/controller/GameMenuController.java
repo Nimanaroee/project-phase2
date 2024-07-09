@@ -1,18 +1,26 @@
 package controller;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import game.*;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import model.*;
+import javafx.animation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import javafx.util.Duration;
 
 public class GameMenuController {
     public static Player playingPlayer;
@@ -21,6 +29,7 @@ public class GameMenuController {
     ArrayList<CardGraphic> hand2 = new ArrayList<>();
     ArrayList<CardGraphic> board1 = new ArrayList<>();
     ArrayList<CardGraphic> board2 = new ArrayList<>();
+
 
     @FXML
     private ScrollPane player2hand;
@@ -56,9 +65,12 @@ public class GameMenuController {
     private Label player1HP;
     @FXML
     private Label Round;
+    @FXML
+    private Rectangle timelineIndicator;
 
     @FXML
     private void initialize() {
+
         playingPlayer = game.getPlayer1();
         ArrayList<Card> player1Hand = (ArrayList<Card>) game.getPlayer1Hand();
         for (Card card : player1Hand) {
@@ -103,6 +115,14 @@ public class GameMenuController {
         player1HP.setText("HP: " + game.getPlayer1().getHealth());
         player2HP.setText("HP: " + game.getPlayer2().getHealth());
         Round.setText("Round: " + game.getCurrentRound());
+        double stepSize = player1boardHbox.getWidth() / game.getPlayer1Board().size();
+        //rect nedds help like me
+        Pane parentPane = (Pane) player1board.getParent();
+        parentPane.getChildren().add(timelineIndicator);
+        timelineIndicator.setX(0);
+        timelineIndicator.setY(player1board.getLayoutY() + player1board.getHeight() + 5);
+        timelineIndicator.setWidth(stepSize);
+
     }
 
     @FXML
@@ -120,6 +140,7 @@ public class GameMenuController {
             } else {
                 endOfTheTurn();
                 game.setCurrentRound(1);
+                resetTimelineIndicator();
             }
         }
         if (playingPlayer == game.getPlayer1()) {
@@ -166,30 +187,7 @@ public class GameMenuController {
 
 
     private void endOfTheTurn() {
-        for (int i = 0; i < game.getPlayer1Board().size(); i++) {
-            if (game.getPlayer1Board().get(i) != null && game.getPlayer2Board().get(i) != null) {
-                if (game.getPlayer1Board().get(i).getDamage() >= game.getPlayer2Board().get(i).getDefense()) {
-                    game.getPlayer2().setHealth(game.getPlayer2().getHealth() - game.getPlayer1Board().get(i).getDamage() + game.getPlayer2Board().get(i).getDefense());
-                    game.getPlayer2Board().set(i, null);
-//                    System.out.println("1");
-                } else if (game.getPlayer2Board().get(i).getDamage() >= game.getPlayer1Board().get(i).getDefense()) {
-                    game.getPlayer1().setHealth(game.getPlayer1().getHealth() - game.getPlayer2Board().get(i).getDamage() + game.getPlayer1Board().get(i).getDefense());
-                    game.getPlayer1Board().set(i, null);
-//                    System.out.println("2");
-                } else {
-                    game.getPlayer1Board().get(i).setDefense(game.getPlayer1Board().get(i).getDefense() - game.getPlayer2Board().get(i).getDamage());
-                    game.getPlayer2Board().get(i).setDefense(game.getPlayer2Board().get(i).getDefense() - game.getPlayer1Board().get(i).getDamage());
-//                    System.out.println("3");
-                }
-            } else if (game.getPlayer1Board().get(i) != null && game.getPlayer2Board().get(i) == null) {
-                game.getPlayer2().setHealth(game.getPlayer2().getHealth() - game.getPlayer1Board().get(i).getDamage());
-//                System.out.println("4");
-            } else if (game.getPlayer2Board().get(i) != null && game.getPlayer1Board().get(i) == null) {
-                game.getPlayer1().setHealth(game.getPlayer1().getHealth() - game.getPlayer2Board().get(i).getDamage());
-//                System.out.println("5");
-            }
-
-        }
+        moveTimelineIndicator();
 
     }
 
@@ -431,6 +429,48 @@ public class GameMenuController {
             }
         }
         return null;
+    }
+
+    private void moveTimelineIndicator() {
+        double stepSize = player1boardHbox.getWidth() / game.getPlayer1Board().size();
+        Timeline timeline = new Timeline();
+        for (int i = 0; i < game.getPlayer1Board().size(); i++) {
+            final int index = i;
+            KeyFrame keyFrame = new KeyFrame(Duration.seconds(i), event -> {
+                timelineIndicator.setX(stepSize * index);
+                updatePlayerStats(index);
+                updateAll();
+            });
+            timeline.getKeyFrames().add(keyFrame);
+        }
+        timeline.setOnFinished(event -> {
+            resetTimelineIndicator();
+            updateAll();
+        });
+        timeline.play();
+    }
+
+    private void updatePlayerStats(int index) {
+        if (game.getPlayer1Board().get(index) != null && game.getPlayer2Board().get(index) != null) {
+            if (game.getPlayer1Board().get(index).getDamage() >= game.getPlayer2Board().get(index).getDefense()) {
+                game.getPlayer2().setHealth(game.getPlayer2().getHealth() - game.getPlayer1Board().get(index).getDamage() + game.getPlayer2Board().get(index).getDefense());
+                game.getPlayer2Board().set(index, null);
+            } else if (game.getPlayer2Board().get(index).getDamage() >= game.getPlayer1Board().get(index).getDefense()) {
+                game.getPlayer1().setHealth(game.getPlayer1().getHealth() - game.getPlayer2Board().get(index).getDamage() + game.getPlayer1Board().get(index).getDefense());
+                game.getPlayer1Board().set(index, null);
+            } else {
+                game.getPlayer1Board().get(index).setDefense(game.getPlayer1Board().get(index).getDefense() - game.getPlayer2Board().get(index).getDamage());
+                game.getPlayer2Board().get(index).setDefense(game.getPlayer2Board().get(index).getDefense() - game.getPlayer1Board().get(index).getDamage());
+            }
+        } else if (game.getPlayer1Board().get(index) != null && game.getPlayer2Board().get(index) == null) {
+            game.getPlayer2().setHealth(game.getPlayer2().getHealth() - game.getPlayer1Board().get(index).getDamage());
+        } else if (game.getPlayer2Board().get(index) != null && game.getPlayer1Board().get(index) == null) {
+            game.getPlayer1().setHealth(game.getPlayer1().getHealth() - game.getPlayer2Board().get(index).getDamage());
+        }
+    }
+
+    private void resetTimelineIndicator() {
+        timelineIndicator.setX(0);
     }
 
 
