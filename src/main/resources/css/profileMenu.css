@@ -2,7 +2,7 @@
 
 .root {
     -fx-font-family: "Arial";
-    -fx-background-image: url("../images/backgroundHistory.jpg"); /* Dark background */
+    -fx-background-image: url("../images/background5.jpg"); /* Dark background */
     -fx-text-fill: #ffffff; /* White text */
 }
 

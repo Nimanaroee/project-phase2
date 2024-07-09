@@ -2,7 +2,8 @@
 
 .root {
     -fx-font-family: "Arial";
-    -fx-background-image: url("../images/background5.jpg"); /* Dark background */
+    -fx-background-image: url("../images/background1.jpg"); /* Dark background */
+    -fx-background-position: center;
     -fx-text-fill: #ffffff; /* White text */
 }
 
@@ -40,7 +41,7 @@
 
 /* Styling the buttons with an image */
 .button {
-    -fx-background-image: url("../images/button.png");
+    -fx-background-image: url("../images/button2.png");
     -fx-background-size: 130;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
@@ -50,16 +51,17 @@
 
 /* Styling the ChoiceBox for dark mode */
 .choice-box {
-    -fx-background-color: gray;
+    -fx-background-color: rgba(0, 0, 0, 0.42);
+    -fx-border-color: linear-gradient(to right, #498149, #6c386c);
+    -fx-border-width: 2px;
     -fx-text-fill: white;
-    -fx-font-weight: bold;
 }
-.custom-textfield {
-    -fx-background-color: #333333; /* Dark grey background */
-    -fx-text-fill: gray; /* White text */
-    -fx-border-color: #555555; /* Grey border */
-    -fx-border-radius: 5; /* Rounded corners */
-    -fx-background-radius: 5;
+.text-field ,
+.password-field{
+    -fx-background-color: rgba(0, 0, 0, 0.35);
+    -fx-border-color: linear-gradient(to right, #245b5d, #6c3838);
+    -fx-border-width: 2px;
+    -fx-text-fill: white;
 }
 /*    -fx-background-color: #333333; !* Dark grey background *!*/
 /*    -fx-text-fill: #ffffff; !* White text *!*/

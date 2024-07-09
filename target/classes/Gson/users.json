@@ -9,7 +9,7 @@
     "level": 1,
     "hp": 100,
     "xp": 0,
-    "gold": 0,
+    "gold": 100,
     "cards": [],
     "histories": []
   },
@@ -23,19 +23,8 @@
     "level": 1,
     "hp": 100,
     "xp": 0,
-    "gold": 0,
-    "cards": [
-      {
-        "name": "1stealth−helper",
-        "defence": 15,
-        "duration": 1,
-        "damage": 10,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 20,
-        "percentage": 0
-      }
-    ],
+    "gold": 1000000,
+    "cards": [],
     "histories": []
   }
 ]

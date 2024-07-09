@@ -2,24 +2,39 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PregameMenuController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../css/pregameMenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PregameMenuController">
    <VBox alignment="CENTER" layoutX="129.0" layoutY="87.0" prefHeight="212.0" prefWidth="192.0" spacing="20.0">
       <TextField fx:id="usernameField" alignment="CENTER" promptText="enter username" />
       <PasswordField fx:id="passwordField" alignment="CENTER" promptText="enter password" />
-      <Button fx:id="validityButton" mnemonicParsing="false" onAction="#onClickValidityCheckButton" text="validity check" />
+      <Button fx:id="validityButton" mnemonicParsing="false" onAction="#onClickValidityCheckButton" prefHeight="68.0" prefWidth="128.0" text="validity check">
+         <font>
+            <Font size="11.5" />
+         </font></Button>
    </VBox>
    <VBox layoutX="436.0" layoutY="132.0" prefHeight="197.0" prefWidth="100.0" spacing="50.0">
       <ChoiceBox fx:id="choiceBoxFirst" prefWidth="150.0" />
-      <TextField fx:id="gambleFirst" />
+      <TextField fx:id="gambleFirst" alignment="CENTER" promptText="gamble" />
    </VBox>
    <VBox layoutX="679.0" layoutY="131.0" prefHeight="200.0" prefWidth="100.0" spacing="50.0">
       <ChoiceBox fx:id="choiceBoxSecond" prefWidth="150.0" />
-      <TextField fx:id="gambleSecond" />
+      <TextField fx:id="gambleSecond" promptText="gamble" />
    </VBox>
-   <Button fx:id="startButton" layoutX="153.0" layoutY="399.0" mnemonicParsing="false" onAction="#onClickStartGameButton" prefHeight="57.0" prefWidth="132.0" text="Start game" />
+   <Button fx:id="startButton" layoutX="161.0" layoutY="276.0" mnemonicParsing="false" onAction="#onClickStartGameButton" prefHeight="68.0" prefWidth="128.0" text="Start game" />
+   <Button layoutX="-11.0" layoutY="544.0" mnemonicParsing="false" onAction="#onClickBackButton" prefHeight="68.0" prefWidth="128.0" text="back" />
+   <Label layoutX="464.0" layoutY="79.0" prefHeight="26.0" prefWidth="39.0" text="user1 " textFill="WHITE">
+      <font>
+         <Font size="64.0" />
+      </font>
+   </Label>
+   <Label layoutX="713.0" layoutY="84.0" text="user2" textFill="WHITE" />
+   <ImageView fx:id="imageFirst" fitHeight="150.0" fitWidth="150.0" layoutX="407.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true" />
+   <ImageView fx:id="imageSecond" fitHeight="150.0" fitWidth="150.0" layoutX="659.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true" />
 </AnchorPane>
