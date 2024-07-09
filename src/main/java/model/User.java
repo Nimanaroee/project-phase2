@@ -114,9 +114,6 @@ public class User {
         return this.xp;
     }
 
-    public ArrayList<CardModel> getCards() {
-        return this.cardModels;
-    }
 
     public ArrayList<DataHistory> getHistories() {
         return this.histories;
@@ -135,5 +132,9 @@ public class User {
 
     public void setCharacter(int character) {
         this.character = character;
+    }
+
+    public ArrayList<CardModel> getCards() {
+        return cardModels;
     }
 }

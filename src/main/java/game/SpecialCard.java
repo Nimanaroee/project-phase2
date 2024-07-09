@@ -1,7 +1,7 @@
 package game;
 
 public class SpecialCard extends Card {
-    private final SpecialCardType type;
+
     private final String name;
     private final String description;
     private final int cost;
@@ -108,21 +108,6 @@ public class SpecialCard extends Card {
         System.out.println("Cost: " + cost);
         System.out.println("Attack: " + attack);
         System.out.println("Defense: " + defense);
-    }
-
-    public enum SpecialCardType {
-        BOMB,
-        SHIELD,
-        HEAL,
-        ROUNDSETBACKER,
-        ROUNDADVANCER,
-        CARDDELETER,
-        CARDSTEALER,
-        HIDER,
-        BLOCKER,
-        POISONER,
-        DAMAGER,
-        CHANGEBLOCKPOSITION
     }
 
 

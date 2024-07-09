@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Data {
     private static final ArrayList<DataHistory> histories = new ArrayList<>();
@@ -37,10 +38,6 @@ public class Data {
 
     public static ArrayList<User> getAllUser() {
         return Data.users;
-    }
-
-    public static void setAllUsers(ArrayList<User> users) {
-        Data.users = users;
     }
 
     //// logged in usernames
@@ -95,5 +92,13 @@ public class Data {
     //// data history
     public static ArrayList<DataHistory> getHistories() {
         return Data.histories;
+    }
+
+    public static List<User> getAllUsers() {
+        return users;
+    }
+
+    public static void setAllUsers(ArrayList<User> users) {
+        Data.users = users;
     }
 }
