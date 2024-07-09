@@ -32,9 +32,9 @@
 }
 
 .button {
-    -fx-background-color: linear-gradient(to right, #00ff00, #ff00ff);
+    /*-fx-background-color: linear-gradient(to right, #00ff00, #ff00ff);*/
     -fx-text-fill: black;
-    -fx-border-color: white;
+    -fx-border-color: linear-gradient(to right, #88f188, #e78ae7);
     -fx-border-width: 2px;
     -fx-font-weight: bold;
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.8) , 0,0,2,0 );

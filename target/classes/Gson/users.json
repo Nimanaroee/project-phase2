@@ -1,1 +1,41 @@
-{"username":"nima","nickname":"naroee","password":"Nima2005!","email":"nima@gmail.com","question":"• 2-What is your favourite color ?","answer":"blue","level":1,"hp":100,"xp":0,"gold":0,"cards":[],"histories":[]}
+[
+  {
+    "username": "parham",
+    "nickname": "pmshw",
+    "password": "abcD1234!",
+    "email": "parham@gmail.com",
+    "question": "• 2-What is your favourite color ?",
+    "answer": "Brown",
+    "level": 1,
+    "hp": 100,
+    "xp": 0,
+    "gold": 0,
+    "cards": [],
+    "histories": []
+  },
+  {
+    "username": "nima",
+    "nickname": "naroee",
+    "password": "Nima2005!",
+    "email": "nima@gmail.com",
+    "question": "• 2-What is your favourite color ?",
+    "answer": "blue",
+    "level": 1,
+    "hp": 100,
+    "xp": 0,
+    "gold": 0,
+    "cards": [
+      {
+        "name": "1stealth−helper",
+        "defence": 15,
+        "duration": 1,
+        "damage": 10,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 20,
+        "percentage": 0
+      }
+    ],
+    "histories": []
+  }
+]
