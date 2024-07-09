@@ -35,7 +35,7 @@ public class MainMenuController {
     @FXML
     protected void initialize() {
         try {
-            String[] strings = {"3", "4"};
+            String[] strings = {"1", "2", "5", "3", "4"};
             avatarImage = new Image(String.valueOf(PregameMenuController.class.getResource("/images/avatar/"+strings[new Random().nextInt(strings.length)]+".jpg")));
 
         } catch (Exception e) { e.printStackTrace();}
