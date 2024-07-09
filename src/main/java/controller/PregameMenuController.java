@@ -6,8 +6,11 @@ import javafx.scene.image.ImageView;
 import model.Data;
 import model.GraphicData;
 import model.User;
+import view.GameMenuView;
 import view.MainMenuView;
 import view.RegisterMenuView;
+
+import java.io.IOException;
 
 public class PregameMenuController {
     public TextField usernameField;
@@ -93,14 +96,21 @@ public class PregameMenuController {
         errorAlert.showAndWait();
     }
 
-    public void onClickStartGameButton() {
+    public void onClickStartGameButton() throws IOException {
         onClickValidityCheckButton();
 
         String firstCharacter = choiceBoxFirst.getValue();
         String secondCharacter = choiceBoxSecond.getValue();
 
-        int firstGold = Integer.parseInt(gambleFirst.getText());
-        int secondGold = Integer.parseInt(gambleSecond.getText());
+        int firstGold = 0;
+        int secondGold = 0;
+        try {
+            firstGold = Integer.parseInt(gambleFirst.getText());
+            firstGold = Integer.parseInt(gambleFirst.getText());
+        } catch (Exception e) {
+            System.out.println("wrong gambling");
+        }
+
         int minimum = Math.min(firstGold, secondGold);
         if (minimum > Data.getLoggedInUser1().getGold() || minimum > Data.getLoggedInUser2().getGold()) {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
@@ -111,6 +121,8 @@ public class PregameMenuController {
 
         setCharacter(firstCharacter, 1);
         setCharacter(secondCharacter, 2);
+
+        new GameMenuView().start(GraphicData.stage);
     }
 
     public void onClickBackButton() throws Exception {
@@ -124,5 +136,6 @@ public class PregameMenuController {
         } else {
             user = Data.getLoggedInUser2();
         }
+        /////// set character cards and other stuff
     }
 }
