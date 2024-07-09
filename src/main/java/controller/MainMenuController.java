@@ -32,6 +32,8 @@ public class MainMenuController {
     public ImageView profileAvatar;
     private Image avatarImage;
 
+
+
     @FXML
     protected void initialize() {
         try {
