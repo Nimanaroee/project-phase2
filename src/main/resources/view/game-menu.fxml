@@ -4,61 +4,66 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../css/shopMenu.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameMenuController">
-    <Pane prefHeight="600.0" prefWidth="900.0">
-        <Label layoutX="39.0" layoutY="25.0" text="Player2 hp:">
+<AnchorPane fx:id="gamePane" prefHeight="650.0" prefWidth="1237.0" stylesheets="@../css/shopMenu.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameMenuController">
+    <Pane layoutX="1.0" layoutY="20.0" prefHeight="587.0" prefWidth="1250.0" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="5.0">
+        <FlowPane alignment="CENTER" columnHalignment="CENTER" layoutX="1.0" layoutY="-9.0" prefHeight="654.0" prefWidth="1231.0">
+            <children>
+                <ScrollPane fx:id="player2hand" prefHeight="157.0" prefWidth="336.0">
+                    <content>
+                        <HBox fx:id="player2handHbox" prefHeight="104.0" prefWidth="71.0" />
+                    </content>
+                </ScrollPane>
+                <ScrollPane fx:id="player2board" prefHeight="163.0" prefWidth="1214.0">
+                    <content>
+                        <HBox fx:id="player2boardHbox" prefHeight="149.0" prefWidth="79.0" />
+                    </content>
+                </ScrollPane>
+                <ScrollPane fx:id="player1board" prefHeight="158.0" prefWidth="1213.0">
+                    <content>
+                        <HBox fx:id="player1boardHbox" prefHeight="148.0" prefWidth="72.0" />
+                        <AnchorPane />
+                    </content>
+                </ScrollPane>
+                <ScrollPane fx:id="player1hand" prefHeight="152.0" prefWidth="332.0">
+                    <content>
+                        <HBox fx:id="player1handHbox" prefHeight="105.0" prefWidth="69.0" />
+                    </content>
+                </ScrollPane>
+            </children>
+        </FlowPane>
+        <Label layoutX="113.0" layoutY="37.0" text="Player2 hp:">
             <font>
                 <Font name="System Bold" size="25.0" />
             </font>
         </Label>
-        <ScrollPane fx:id="player2hand" layoutX="192.0" prefHeight="113.0" prefWidth="516.0">
-            <content>
-                <HBox fx:id="player2handHbox" prefHeight="104.0" prefWidth="71.0" />
-            </content>
-        </ScrollPane>
-        <Button layoutX="767.0" layoutY="33.0" mnemonicParsing="false" onAction="#onClickEndTurnButton" prefHeight="49.0" prefWidth="92.0" text="endTurn">
+        <Button layoutX="1000.0" layoutY="35.0" mnemonicParsing="false" onAction="#onClickEndTurnButton" prefHeight="49.0" prefWidth="92.0" text="endTurn">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <ScrollPane fx:id="player1hand" layoutX="193.0" layoutY="482.0" prefHeight="113.0" prefWidth="516.0">
-            <content>
-                <HBox fx:id="player1handHbox" prefHeight="105.0" prefWidth="69.0" />
-            </content>
-        </ScrollPane>
-        <ScrollPane fx:id="player1board" layoutX="1.0" layoutY="300.0" prefHeight="158.0" prefWidth="900.0">
-            <content>
-                <HBox fx:id="player1boardHbox" prefHeight="148.0" prefWidth="72.0" />
-            <AnchorPane />
-            </content>
-        </ScrollPane>
-        <ScrollPane fx:id="player2board" layoutY="133.0" prefHeight="158.0" prefWidth="900.0">
-            <content>
-                <HBox fx:id="player2boardHbox" prefHeight="149.0" prefWidth="79.0" />
-            </content>
-        </ScrollPane>
-        <Label layoutX="40.0" layoutY="501.0" text="Player1 hp:">
+        <Label layoutX="112.0" layoutY="492.0" text="Player1 hp:">
             <font>
                 <Font name="System Bold" size="25.0" />
             </font>
         </Label>
-        <Label fx:id="player2HP" layoutX="82.0" layoutY="57.0" text="HP" />
-        <Label fx:id="player1HP" layoutX="82.0" layoutY="539.0" text="HP" />
-        <Label layoutX="727.0" layoutY="489.0" text="Round out of 3">
+        <Label fx:id="player2HP" layoutX="156.0" layoutY="69.0" text="HP" />
+        <Label fx:id="player1HP" layoutX="154.0" layoutY="530.0" text="HP" />
+        <Label layoutX="960.0" layoutY="472.0" text="Round out of 3">
             <font>
                 <Font name="System Bold" size="25.0" />
             </font>
         </Label>
-        <Label fx:id="Round" layoutX="767.0" layoutY="537.0" text="Round">
+        <Label fx:id="Round" layoutX="960.0" layoutY="520.0" text="Round">
             <font>
                 <Font name="System Bold" size="25.0" />
             </font>
         </Label>
+        <Rectangle fx:id="timelineIndicator" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="322.0" layoutX="9.0" layoutY="161.0" opacity="0.45" stroke="BLACK" strokeType="INSIDE" width="20.0" />
     </Pane>
-       <Rectangle fx:id="timelineIndicator" fill="RED" height="148.0" width="16.0" />
 </AnchorPane>

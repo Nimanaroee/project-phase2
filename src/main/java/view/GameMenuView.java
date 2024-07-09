@@ -33,7 +33,7 @@ public class GameMenuView extends Application {
         GameMenuController.game = game;
 
         FXMLLoader fxmlLoader = new FXMLLoader(RegisterMenuView.class.getResource("game-menu.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), GraphicData.V, GraphicData.H);
+        Scene scene = new Scene(fxmlLoader.load(), 1250, 650);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

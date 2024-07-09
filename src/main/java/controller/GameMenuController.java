@@ -30,6 +30,8 @@ public class GameMenuController {
     ArrayList<CardGraphic> board1 = new ArrayList<>();
     ArrayList<CardGraphic> board2 = new ArrayList<>();
 
+    @FXML
+    private AnchorPane gamePane;
 
     @FXML
     private ScrollPane player2hand;
@@ -116,13 +118,7 @@ public class GameMenuController {
         player2HP.setText("HP: " + game.getPlayer2().getHealth());
         Round.setText("Round: " + game.getCurrentRound());
         double stepSize = player1boardHbox.getWidth() / game.getPlayer1Board().size();
-        //rect nedds help like me
-        Pane parentPane = (Pane) player1board.getParent();
-        parentPane.getChildren().add(timelineIndicator);
-        timelineIndicator.setX(0);
-        timelineIndicator.setY(player1board.getLayoutY() + player1board.getHeight() + 5);
-        timelineIndicator.setWidth(stepSize);
-
+        timelineIndicator.toFront();
     }
 
     @FXML
@@ -219,12 +215,13 @@ public class GameMenuController {
     public VBox createCardDetails(CardGraphic card) {
         VBox detailsBox = new VBox();
         if (CardToCardConvertor.convertCardModelToCard(card.getCard()).getType() == Card.SpecialCardType.NORMAL) {
-            detailsBox.getChildren().add(new Label("duration: " + card.getCard().getDuration()));
-            detailsBox.getChildren().add(new Label("damage: " + card.getCard().getDamage()));
-            detailsBox.getChildren().add(new Label("defence: " + card.getCard().getDefence()));
+            detailsBox.getChildren().add(new Label("dur: " + card.getCard().getDuration()));
+            detailsBox.getChildren().add(new Label("dam: " + card.getCard().getDamage()));
+            detailsBox.getChildren().add(new Label("def: " + card.getCard().getDefence()));
         } else {
-            detailsBox.getChildren().add(new Label("Special Card"));
-            detailsBox.getChildren().add(new Label("Type: " + (CardToCardConvertor.convertCardModelToCard(card.getCard())).getType().toString()));
+            detailsBox.getChildren().add(new Label("Special"));
+            detailsBox.getChildren().add(new Label("Type: "));
+            detailsBox.getChildren().add(new Label((CardToCardConvertor.convertCardModelToCard(card.getCard())).getType().toString()));
         }
         return detailsBox;
     }
@@ -232,8 +229,8 @@ public class GameMenuController {
     public VBox createCardDetailsForBoard(CardGraphic card) {
         VBox detailsBox = new VBox();
         if (CardToCardConvertor.convertCardModelToCard(card.getCard()).getType() == Card.SpecialCardType.NORMAL) {
-            detailsBox.getChildren().add(new Label("damage: " + card.getCard().getDamage()));
-            detailsBox.getChildren().add(new Label("defence: " + card.getCard().getDefence()));
+            detailsBox.getChildren().add(new Label("dam: " + card.getCard().getDamage()));
+            detailsBox.getChildren().add(new Label("def: " + card.getCard().getDefence()));
         }
         return detailsBox;
     }
@@ -414,6 +411,7 @@ public class GameMenuController {
         player1HP.setText("HP: " + game.getPlayer1().getHealth());
         player2HP.setText("HP: " + game.getPlayer2().getHealth());
         Round.setText("Round: " + game.getCurrentRound());
+        timelineIndicator.toFront();
     }
 
 

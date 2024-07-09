@@ -11,9 +11,10 @@ import javafx.scene.shape.Rectangle;
 public class CardGraphic extends Rectangle {
     public String name;
     CardModel cardModel;
+    int H1 = 50, H2 = 90;
 
     public CardGraphic(CardModel cardModel) {
-        super(70, 100);
+        super(50, 90);
         this.cardModel = cardModel;
         this.name = cardModel.getName();
         try {
@@ -54,11 +55,13 @@ public class CardGraphic extends Rectangle {
         });
     }
 
+
     public CardGraphic(String empty) {
-        super(70, 100);
+        super(50, 90);
         cardModel = new CardModel("empty", 0, 1, 0, 0, 0);
         setFill(Color.WHITE);
     }
+
 
     public CardModel getCard() {
         return this.cardModel;
