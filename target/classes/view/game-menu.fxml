@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../css/shopMenu.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameMenuController">
@@ -33,6 +34,7 @@
         <ScrollPane fx:id="player1board" layoutX="1.0" layoutY="300.0" prefHeight="158.0" prefWidth="900.0">
             <content>
                 <HBox fx:id="player1boardHbox" prefHeight="148.0" prefWidth="72.0" />
+            <AnchorPane />
             </content>
         </ScrollPane>
         <ScrollPane fx:id="player2board" layoutY="133.0" prefHeight="158.0" prefWidth="900.0">
@@ -46,7 +48,7 @@
             </font>
         </Label>
         <Label fx:id="player2HP" layoutX="82.0" layoutY="57.0" text="HP" />
-        <Label fx:id="player1HP1" layoutX="82.0" layoutY="539.0" text="HP" />
+        <Label fx:id="player1HP" layoutX="82.0" layoutY="539.0" text="HP" />
         <Label layoutX="727.0" layoutY="489.0" text="Round out of 3">
             <font>
                 <Font name="System Bold" size="25.0" />
@@ -58,4 +60,5 @@
             </font>
         </Label>
     </Pane>
+       <Rectangle fx:id="timelineIndicator" fill="RED" height="148.0" width="16.0" />
 </AnchorPane>
