@@ -43,10 +43,10 @@ public class GsonHandler {
     public void readCardGSON() {
         try {
             String content = Files.readString(Paths.get("src/main/resources/Gson/cards.json"));
-            Type cardListType = new TypeToken<ArrayList<Card>>() {
+            Type cardListType = new TypeToken<ArrayList<CardModel>>() {
             }.getType();
-            List<Card> cards = gson.fromJson(content, cardListType);
-            Data.setAllCards((ArrayList<Card>) cards);
+            List<CardModel> cardModels = gson.fromJson(content, cardListType);
+            Data.setAllCards((ArrayList<CardModel>) cardModels);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -54,8 +54,8 @@ public class GsonHandler {
 
     public void saveCardGson() {
         try {
-            List<Card> cards = Data.getAllCards();
-            String json = gson.toJson(cards);
+            List<CardModel> cardModels = Data.getAllCards();
+            String json = gson.toJson(cardModels);
             Files.writeString(Paths.get("src/main/resources/Gson/cards.json"), json, StandardOpenOption.TRUNCATE_EXISTING);
         } catch (IOException e) {
             e.printStackTrace();

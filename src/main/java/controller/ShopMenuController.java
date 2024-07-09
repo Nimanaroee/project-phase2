@@ -7,11 +7,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import model.Card;
+import model.CardModel;
 import model.CardGraphic;
 import model.Data;
 import model.GraphicData;
 import view.MainMenuView;
+
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -35,12 +36,12 @@ public class ShopMenuController {
         this.unlockedCards = new ArrayList<>();
 
         // Add some sample cards
-        ArrayList<Card> cards = Data.getAllCards();
-        for (Card card : cards) {
-            if (Data.getLoggedInUser1().getCardByName(card.getName()) == null)
-                lockedCards.add(new CardGraphic(card));
+        ArrayList<CardModel> cardModels = Data.getAllCards();
+        for (CardModel cardModel : cardModels) {
+            if (Data.getLoggedInUser1().getCardByName(cardModel.getName()) == null)
+                lockedCards.add(new CardGraphic(cardModel));
             else
-                unlockedCards.add(new CardGraphic(Data.getLoggedInUser1().getCardByName(card.getName())));
+                unlockedCards.add(new CardGraphic(Data.getLoggedInUser1().getCardByName(cardModel.getName())));
         }
 
         lockedHBox.getChildren().clear();

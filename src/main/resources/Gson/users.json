@@ -1,19 +1,5 @@
 [
   {
-    "username": "parham",
-    "nickname": "pmshw",
-    "password": "abcD1234!",
-    "email": "parham@gmail.com",
-    "question": "• 2-What is your favourite color ?",
-    "answer": "Brown",
-    "level": 1,
-    "hp": 100,
-    "xp": 0,
-    "gold": 100,
-    "cards": [],
-    "histories": []
-  },
-  {
     "username": "nima",
     "nickname": "naroee",
     "password": "Nima2005!",
@@ -25,6 +11,61 @@
     "xp": 0,
     "gold": 1000000,
     "cards": [],
+    "histories": []
+  },
+  {
+    "username": "parham",
+    "nickname": "pmshw",
+    "password": "abcD1234!",
+    "email": "parham@gmail.com",
+    "question": "• 2-What is your favourite color ?",
+    "answer": "Brown",
+    "level": 1,
+    "hp": 100,
+    "xp": 0,
+    "gold": 100,
+    "cards": [
+      {
+        "name": "1stealth−helper",
+        "defence": 15,
+        "duration": 1,
+        "damage": 10,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 20,
+        "percentage": 0
+      },
+      {
+        "name": "1ultra−sonic−brust",
+        "defence": 20,
+        "duration": 2,
+        "damage": 33,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1ion−blast",
+        "defence": 10,
+        "duration": 2,
+        "damage": 27,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1biker−helper",
+        "defence": 45,
+        "duration": 3,
+        "damage": 20,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      }
+    ],
     "histories": []
   }
 ]

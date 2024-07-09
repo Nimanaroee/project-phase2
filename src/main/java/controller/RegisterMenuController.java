@@ -2,15 +2,11 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import model.*;
 import view.LoginMenuView;
-import view.RegisterMenuView;
 
 import java.io.IOException;
 import java.security.SecureRandom;
-import java.util.Objects;
 import java.util.Random;
 
 public class RegisterMenuController {
@@ -56,6 +52,7 @@ public class RegisterMenuController {
         buildCaptcha();
 
     }
+
     @FXML
     protected void onClickRegisterButton() throws Exception {
         String username = usernameField.getText();
@@ -69,44 +66,44 @@ public class RegisterMenuController {
 
         System.out.println(answerCaptcha + " " + captchaString);
 
-        if(username == null || nickname == null || password == null || passwordConfirm == null || email == null || answerQuestion == null || question == null || answerCaptcha == null) {
+        if (username == null || nickname == null || password == null || passwordConfirm == null || email == null || answerQuestion == null || question == null || answerCaptcha == null) {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setContentText("please fill boxes completely!");
             errorAlert.showAndWait();
             return;
         }
-        if(!Regex.VALID_USERNAME.matches(username)) {
+        if (!Regex.VALID_USERNAME.matches(username)) {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setContentText("username can be only letter and number");
             errorAlert.showAndWait();
             return;
         }
-        if(!Regex.VALID_NICKNAME.matches(nickname)) {
+        if (!Regex.VALID_NICKNAME.matches(nickname)) {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setContentText("nick can be only letter");
             errorAlert.showAndWait();
             return;
         }
-        if(!Regex.STRONG_PASSWORD.matches(password)) {
+        if (!Regex.STRONG_PASSWORD.matches(password)) {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             ///// complete conditionssssssssss
             errorAlert.setContentText("password condition : 1-at least 6 character, 2-at least one small letter, 3- at least one special character");
             errorAlert.showAndWait();
             return;
         }
-        if(!password.equals(passwordConfirm)) {
+        if (!password.equals(passwordConfirm)) {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setContentText("check your password again!");
             errorAlert.showAndWait();
             return;
         }
-        if(!Regex.VALID_EMAIL.matches(email)) {
+        if (!Regex.VALID_EMAIL.matches(email)) {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setContentText("wrong email address!");
             errorAlert.showAndWait();
             return;
         }
-        if(!captchaString.equals(answerCaptcha)) {
+        if (!captchaString.equals(answerCaptcha)) {
             buildCaptcha();
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setContentText("wrong captcha!");
@@ -115,14 +112,17 @@ public class RegisterMenuController {
         }
 
         User user = new User(username, password, email, nickname, question, answerQuestion);
+        user.addCard(CardModel.getStarterPack());
         Data.addUser(user);
 
         new LoginMenuView().start(GraphicData.stage);
     }
+
     @FXML
     protected void onClickLoginButton() throws Exception {
         new LoginMenuView().start(GraphicData.stage);
     }
+
     @FXML
     protected void onClickRandomPasswordButton() {
         randomPasswordLabel.setText(passwordBuilder());
@@ -134,7 +134,7 @@ public class RegisterMenuController {
         char[] UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
         char[] NUMBERS = "0123456789".toCharArray();
         char[] ALL_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*".toCharArray();
-        int length = (int)(Math.random()*10+4);
+        int length = (int) (Math.random() * 10 + 4);
         Random rand = new SecureRandom();
         char[] password = new char[length];
         //get the requirements out of the way
@@ -154,10 +154,11 @@ public class RegisterMenuController {
             password[randomPosition] = temp;
         }
         StringBuilder ret = new StringBuilder();
-        for(char c : password)
+        for (char c : password)
             ret.append(c);
         return ret.toString();
     }
+
     private void buildCaptcha() throws IOException {
         captchaString = String.valueOf(Ascii.asciiArt());
         captcha.setText(captchaString);
