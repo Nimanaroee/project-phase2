@@ -9,30 +9,23 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../css/mainMenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainMenuController">
-   <children>
-      <VBox alignment="TOP_CENTER" layoutX="63.0" layoutY="36.0" prefHeight="491.0" prefWidth="178.0">
-         <children>
-               <Button fx:id="gameButton" mnemonicParsing="false" onAction="#onClickGameButton" prefHeight="177.0" prefWidth="117.0" text="start new game">
-               <font>
-                  <Font size="12.0" />
-               </font></Button>
-            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onClickHistoryButton" prefHeight="180.0" prefWidth="119.0" text="history" />
-            <Button fx:id="shopButton" mnemonicParsing="false" onAction="#onClickShopButton" prefHeight="185.0" prefWidth="115.0" text="shop" />
-            <Button fx:id="profileButton" mnemonicParsing="false" onAction="#onClickProfileButton" prefHeight="187.0" prefWidth="116.0" text="edit profile" />
-            <Button fx:id="settingButton" mnemonicParsing="false" onAction="#onClickSettingButton" prefHeight="180.0" prefWidth="119.0" text="setting" />
-            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onClickLogoutButton" prefHeight="173.0" prefWidth="116.0" text="logout" />
-         </children>
+   <VBox alignment="TOP_CENTER" layoutX="63.0" layoutY="36.0" prefHeight="491.0" prefWidth="178.0">
+      <Button fx:id="gameButton" mnemonicParsing="false" onAction="#onClickGameButton" prefHeight="177.0" prefWidth="117.0" text="start new game">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onClickHistoryButton" prefHeight="180.0" prefWidth="119.0" text="history" />
+      <Button fx:id="shopButton" mnemonicParsing="false" onAction="#onClickShopButton" prefHeight="185.0" prefWidth="115.0" text="shop" />
+      <Button fx:id="profileButton" mnemonicParsing="false" onAction="#onClickProfileButton" prefHeight="187.0" prefWidth="116.0" text="edit profile" />
+      <Button fx:id="settingButton" mnemonicParsing="false" onAction="#onClickSettingButton" prefHeight="180.0" prefWidth="119.0" text="setting" />
+      <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onClickLogoutButton" prefHeight="173.0" prefWidth="116.0" text="logout" />
+   </VBox>
+   <HBox layoutX="607.0" layoutY="16.0" prefHeight="100.0" prefWidth="290.0">
+      <ImageView fx:id="profileAvatar" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#onAvatarClick" pickOnBounds="true" preserveRatio="true" />
+      <VBox prefHeight="100.0" prefWidth="191.0">
+         <Label fx:id="heartLabel" prefHeight="43.0" prefWidth="126.0" text="balbe" />
+         <Label fx:id="scoreLabel" prefHeight="43.0" prefWidth="201.0" text="leba" />
       </VBox>
-      <HBox layoutX="456.0" layoutY="14.0" prefHeight="40.0" prefWidth="130.0">
-         <children>
-            <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-            <VBox prefHeight="33.0" prefWidth="107.0">
-               <children>
-                  <Label fx:id="heartLabel" prefHeight="17.0" prefWidth="107.0" text="Label" />
-                  <Label fx:id="scoreLabel" prefHeight="17.0" prefWidth="121.0" text="Label" />
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-   </children>
+   </HBox>
 </AnchorPane>

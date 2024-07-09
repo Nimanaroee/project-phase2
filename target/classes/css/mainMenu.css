@@ -12,33 +12,6 @@
     -fx-background-color: #2c2c2c;
 }
 
-/* TableView Styles */
-.table-view {
-    -fx-background-color: #1e1e1e; /* Slightly lighter dark background */
-    -fx-border-color: #333333; /* Dark grey border */
-    -fx-border-width: 1px; /* Thin border */
-}
-
-.table-column-header {
-    -fx-background-color: #333333; /* Dark grey header background */
-    -fx-text-fill: #ffffff; /* White text */
-    -fx-font-size: 14px; /* Text size */
-    -fx-padding: 5; /* Padding inside header */
-}
-
-.table-cell {
-    -fx-padding: 5; /* Padding inside cell */
-    -fx-text-fill: #ffffff; /* White text */
-}
-
-.table-row-cell:odd {
-    -fx-background-color: #242424; /* Slightly lighter for odd rows */
-}
-
-.table-row-cell:even {
-    -fx-background-color: #1e1e1e; /* Slightly lighter for even rows */
-}
-
 /* Styling the buttons with an image */
 .button {
     -fx-background-image: url("../images/button3.png");
@@ -54,6 +27,17 @@
     -fx-background-color: gray;
     -fx-text-fill: white;
     -fx-font-weight: bold;
+}
+.label {
+    -fx-font-family: 'Lucida Console', Monaco, monospace;
+    -fx-font-size: 15px;
+    -fx-text-fill: rgb(12, 12, 12); /* Neon green color */
+    -fx-effect: dropshadow(gaussian, rgba(65, 145, 65, 0.75), 10, 0.5, 0, 0); /* Neon glow effect */
+    -fx-padding: 10px;
+    -fx-background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+    -fx-border-color: #00FF00;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
 }
 
 
