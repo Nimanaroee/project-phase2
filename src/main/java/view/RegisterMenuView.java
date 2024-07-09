@@ -16,11 +16,6 @@ public class RegisterMenuView extends Application {
         Data.gsonHandler.readUserGSON();
         Data.gsonHandler.readCardGSON();
 
-        ArrayList<Card> cards = Data.getAllCards();
-        for(Card card : cards) {
-            System.out.println(card.getName() + " " + card.getPrice() + " " + card.getDefence());
-        }
-
         GraphicData.stage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(RegisterMenuView.class.getResource("register-menu.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), GraphicData.V, GraphicData.H);

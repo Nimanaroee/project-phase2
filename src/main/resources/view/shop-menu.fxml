@@ -4,23 +4,28 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ShopMenuController">
-   <Pane prefHeight="584.0" prefWidth="892.0">
-      <Label layoutX="14.0" layoutY="24.0" text="all cards : ">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../css/shopMenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ShopMenuController">
+   <Pane prefHeight="600.0" prefWidth="900.0">
+      <Label layoutX="23.0" layoutY="21.0" text="locked cards : ">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <ScrollPane fx:id="lockedScrollPane" layoutX="48.0" layoutY="58.0" prefHeight="200.0" prefWidth="800.0" />
-      <Button layoutX="19.0" layoutY="509.0" mnemonicParsing="false" onAction="#onClickBackButton" text="back" />
-      <ScrollPane fx:id="unlockedScrollPane" layoutX="47.0" layoutY="300.0" prefHeight="200.0" prefWidth="800.0" />
-      <Label layoutX="33.0" layoutY="262.0" text="unlocked cards :">
+      <ScrollPane fx:id="lockedScrollPane" layoutX="50.0" layoutY="74.0" prefHeight="214.0" prefWidth="800.0">
+         <content>
+            <HBox fx:id="lockedHBox" prefHeight="197.0" prefWidth="200.0" />
+         </content></ScrollPane>
+      <Button layoutX="1.0" layoutY="563.0" mnemonicParsing="false" onAction="#onClickBackButton" prefHeight="37.0" prefWidth="57.0" text="back">
          <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
+            <Font size="14.0" />
+         </font></Button>
+      <ScrollPane fx:id="unlockedScrollPane" layoutX="55.0" layoutY="337.0" prefHeight="200.0" prefWidth="800.0">
+         <content>
+            <HBox fx:id="unlockedHBox" prefHeight="100.0" prefWidth="200.0" />
+         </content></ScrollPane>
    </Pane>
 </AnchorPane>

@@ -1,11 +1,8 @@
 package view;
 
-import controller.ShopMenuController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.GraphicData;
 
@@ -26,5 +23,6 @@ public class ShopMenuView extends Application {
         primaryStage.setScene(scene);
         primaryStage.setTitle("Shop Menu");
         primaryStage.show();
+
     }
 }

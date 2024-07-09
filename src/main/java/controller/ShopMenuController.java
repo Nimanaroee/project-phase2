@@ -1,10 +1,10 @@
 package controller;
 
-import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import model.Card;
@@ -19,48 +19,42 @@ public class ShopMenuController {
 
     private ArrayList<CardGraphic> lockedCards;
     private ArrayList<CardGraphic> unlockedCards;
-    public ScrollPane lockedScrollPane;
-    public ScrollPane unlockedScrollPane;
 
+    @FXML
+    private ScrollPane lockedScrollPane;
+    @FXML
+    private ScrollPane unlockedScrollPane;
+    @FXML
+    private HBox lockedHBox;
+    @FXML
+    private HBox unlockedHBox;
 
-    private void initialize() {
-
+    @FXML
+    public void initialize() {
         this.lockedCards = new ArrayList<>();
         this.unlockedCards = new ArrayList<>();
 
         // Add some sample cards
         ArrayList<Card> cards = Data.getAllCards();
-        for(Card card : cards) {
-            if(Data.getLoggedInUser1().getCardByName(card.getName()) == null)
+        for (Card card : cards) {
+            if (Data.getLoggedInUser1().getCardByName(card.getName()) == null)
                 lockedCards.add(new CardGraphic(card));
             else
                 unlockedCards.add(new CardGraphic(Data.getLoggedInUser1().getCardByName(card.getName())));
         }
 
-        FlowPane lockedFlowPane = new FlowPane();
-        lockedFlowPane.getChildren().addAll(createCardViews(lockedCards, true));
-        lockedScrollPane = new ScrollPane(lockedFlowPane);
-        lockedScrollPane.setFitToWidth(true);
+        lockedHBox.getChildren().clear();
+        lockedHBox.getChildren().addAll(createCardViews(lockedCards, true));
+        lockedHBox.setSpacing(30);
+        lockedScrollPane.setContent(lockedHBox);
 
-        FlowPane unlockedFlowPane = new FlowPane();
-        unlockedFlowPane.getChildren().addAll(createCardViews(unlockedCards, false));
-        unlockedScrollPane = new ScrollPane(unlockedFlowPane);
-        unlockedScrollPane.setFitToWidth(true);
+        unlockedHBox.getChildren().clear();
+        unlockedHBox.getChildren().addAll(createCardViews(unlockedCards, false));
+        unlockedHBox.setSpacing(30);
+        unlockedScrollPane.setContent(unlockedHBox);
     }
 
-    public FlowPane getLockedCardsPane() {
-        FlowPane lockedFlowPane = new FlowPane();
-        lockedFlowPane.getChildren().addAll(createCardViews(lockedCards, true));
-        return lockedFlowPane;
-    }
-
-    public FlowPane getUnlockedCardsPane() {
-        FlowPane unlockedFlowPane = new FlowPane();
-        unlockedFlowPane.getChildren().addAll(createCardViews(unlockedCards, false));
-        return unlockedFlowPane;
-    }
-
-    private ArrayList<VBox> createCardViews(ArrayList<CardGraphic> cards, boolean isLocked) {
+    public ArrayList<VBox> createCardViews(ArrayList<CardGraphic> cards, boolean isLocked) {
         ArrayList<VBox> cardViews = new ArrayList<>();
         for (CardGraphic card : cards) {
             VBox cardBox = new VBox(card, createCardDetails(card));
@@ -70,14 +64,13 @@ public class ShopMenuController {
         return cardViews;
     }
 
-    private VBox createCardDetails(CardGraphic card) {
+    public VBox createCardDetails(CardGraphic card) {
         VBox detailsBox = new VBox();
-        detailsBox.getChildren().add(new Label("Name: " + card.getCard().getName()));
         detailsBox.getChildren().add(new Label("Price: " + card.getCard().getPrice()));
         return detailsBox;
     }
 
-    private void handleMouseEvent(MouseEvent event, CardGraphic card, boolean isLocked) {
+    public void handleMouseEvent(MouseEvent event, CardGraphic card, boolean isLocked) {
         if (event.getButton() == MouseButton.SECONDARY) {
             ContextMenu contextMenu = new ContextMenu();
             MenuItem actionItem = isLocked ? new MenuItem("Buy") : new MenuItem("Upgrade");
@@ -121,7 +114,8 @@ public class ShopMenuController {
         }
     }
 
-    public void onClickBackButton(ActionEvent actionEvent) throws Exception {
+    @FXML
+    public void onClickBackButton() throws Exception {
         new MainMenuView().start(GraphicData.stage);
     }
 }
