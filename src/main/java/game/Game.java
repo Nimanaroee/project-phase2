@@ -37,6 +37,8 @@ public class Game {
         this.player2 = new Player(user2);
         this.player1.setGame(this);
         this.player2.setGame(this);
+        player1.drawCard();
+        player2.drawCard();
         this.gameBoard = new GameBoard(player1, player2);
         this.coinManager = new CoinManager(player1, player2);
     }
@@ -137,4 +139,33 @@ public class Game {
     public void setCurrentRound(int currentRound) {
         this.currentRound = currentRound;
     }
+
+    public List<Card> getPlayer1Hand() {
+        return player1.getHand();
+    }
+
+    public List<Card> getPlayer2Hand() {
+        return player2.getHand();
+    }
+
+    public List<Card> getBoardCards(Player player) {
+        return gameBoard.getBoard(player);
+    }
+
+    public Player getPlayer1() {
+        return player1;
+    }
+
+    public Player getPlayer2() {
+        return player2;
+    }
+
+    public ArrayList<Card> getPlayer1Board() {
+        return gameBoard.getBoard(player1);
+    }
+
+    public ArrayList<Card> getPlayer2Board() {
+        return gameBoard.getBoard(player2);
+    }
+
 }

@@ -8,7 +8,8 @@ public class Card {
     private final int initialDefense;
 
     private final int width;
-    private final int shopCost;
+    private final int shopCost = 10;
+    protected SpecialCardType type = SpecialCardType.NORMAL;
     private String name;
     private int damage;
     private int defense;
@@ -24,9 +25,8 @@ public class Card {
         this.damage = initialDamage / (width + 1);
 
         this.defense = initialDefense;
-        this.shopCost = shopCost;
         this.width = width;
-        System.out.println("Card created: " + name);
+//        System.out.println("Card created: " + name);
     }
 
     public static void showCard(Card card) {
@@ -36,6 +36,14 @@ public class Card {
         System.out.println("Width: " + card.width);
         System.out.println("Cost: " + card.cost);
 
+    }
+
+    public SpecialCardType getType() {
+        return type;
+    }
+
+    public void setType(SpecialCardType type) {
+        this.type = type;
     }
 
     public void play(GameBoard board, int position) {
@@ -90,5 +98,20 @@ public class Card {
 
     public int getWidth() {
         return width;
+    }
+
+    public enum SpecialCardType {
+        BOMB,
+        SHIELD,
+        HEAL,
+        ROUNDSETBACKER,
+        ROUNDADVANCER,
+        CARDDELETER,
+        CARDSTEALER,
+        HIDER,
+        BLOCKER,
+        POISONER,
+        DAMAGER,
+        NORMAL, CHANGEBLOCKPOSITION
     }
 }

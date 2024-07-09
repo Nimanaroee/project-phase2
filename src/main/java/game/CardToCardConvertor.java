@@ -5,11 +5,56 @@ import model.*;
 import java.util.ArrayList;
 
 public class CardToCardConvertor {
+
+
     public static CardModel convertCardToCardModel(Card card) {
-        return new CardModel(card.getName(), card.getDamage(), card.getWidth(), card.getDefense(), 1, card.getShopCost());
+        return new CardModel(card.getName(), card.getDefense(), card.getWidth(), card.getDamage(), 1, card.getShopCost());
+        //CardModel(String name, int defence, int duration, int damage, int upgradeLevel, int upgradeCoast);
+        //Card(cardModel.getName(), 1, cardModel.getDamage(), cardModel.getDefence(), cardModel.getUpgradeCost(), cardModel.getDuration());
+        //Card(String name, int initialCost, int initialDamage, int initialDefense, int shopCost, int width)
     }
 
+
     public static Card convertCardModelToCard(CardModel cardModel) {
+        if (cardModel.getName().contains("support")) {
+            if (cardModel.getName().contains("Bomb")) {
+                return (new SpecialCard(cardModel.getName(), "bomb", 1, cardModel.getDamage(), cardModel.getDefence(), SpecialCard.SpecialCardType.BOMB));
+            }
+            if (cardModel.getName().contains("Heal")) {
+                return (new SpecialCard(cardModel.getName(), "heal", 1, cardModel.getDamage(), cardModel.getDefence(), SpecialCard.SpecialCardType.HEAL));
+            }
+            if (cardModel.getName().contains("Shield")) {
+                return (new SpecialCard(cardModel.getName(), "shield", 1, cardModel.getDamage(), cardModel.getDefence(), SpecialCard.SpecialCardType.SHIELD));
+            }
+            if (cardModel.getName().contains("RoundSetBacker")) {
+                return (new SpecialCard(cardModel.getName(), "round setbacker", 1, cardModel.getDamage(), cardModel.getDefence(), SpecialCard.SpecialCardType.ROUNDSETBACKER));
+            }
+            if (cardModel.getName().contains("RoundAdvancer")) {
+                return (new SpecialCard(cardModel.getName(), "round advancer", 1, cardModel.getDamage(), cardModel.getDefence(), SpecialCard.SpecialCardType.ROUNDADVANCER));
+            }
+            if (cardModel.getName().contains("CardDeleter")) {
+                return (new SpecialCard(cardModel.getName(), "card deleter", 1, cardModel.getDamage(), cardModel.getDefence(), SpecialCard.SpecialCardType.CARDDELETER));
+            }
+            if (cardModel.getName().contains("CardStealer")) {
+                return (new SpecialCard(cardModel.getName(), "card stealer", 1, cardModel.getDamage(), cardModel.getDefence(), SpecialCard.SpecialCardType.CARDSTEALER));
+            }
+            if (cardModel.getName().contains("Damager")) {
+                return (new SpecialCard(cardModel.getName(), "damager", 1, cardModel.getDamage(), cardModel.getDefence(), SpecialCard.SpecialCardType.DAMAGER));
+            }
+            if (cardModel.getName().contains("hider")) {
+                return (new SpecialCard(cardModel.getName(), "hider", 1, cardModel.getDamage(), cardModel.getDefence(), SpecialCard.SpecialCardType.HIDER));
+            }
+            if (cardModel.getName().contains("poisoner")) {
+                return (new SpecialCard(cardModel.getName(), "poisoner", 1, cardModel.getDamage(), cardModel.getDefence(), SpecialCard.SpecialCardType.POISONER));
+            }
+            if (cardModel.getName().contains("blocker")) {
+                return (new SpecialCard(cardModel.getName(), "poison", 1, cardModel.getDamage(), cardModel.getDefence(), SpecialCard.SpecialCardType.BLOCKER));
+            }
+            if (cardModel.getName().contains("changeBlocker")) {
+                return (new SpecialCard(cardModel.getName(), "changeBlocker", 1, cardModel.getDamage(), cardModel.getDefence(), SpecialCard.SpecialCardType.CHANGEBLOCKPOSITION));
+            }
+
+        }
         return new Card(cardModel.getName(), 1, cardModel.getDamage(), cardModel.getDefence(), cardModel.getUpgradeCost(), cardModel.getDuration());
     }
 
@@ -67,7 +112,7 @@ public class CardToCardConvertor {
                 }
 
             }
-            cards.add(convertCardModelToCard(cardModel));
+            cards.add(new Card(cardModel.getName(), 1, cardModel.getDamage(), cardModel.getDefence(), cardModel.getUpgradeCost(), cardModel.getDuration()));
         }
         return cards;
     }
