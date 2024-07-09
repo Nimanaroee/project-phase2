@@ -22,7 +22,10 @@ public class Card {
         this.initialDamage = initialDamage;
         this.initialDefense = initialDefense;
         this.cost = initialCost;
-        this.damage = initialDamage / (width + 1);
+        if (width == 0) {
+            width = 1;
+        }
+        this.damage = initialDamage / (width);
 
         this.defense = initialDefense;
         this.width = width;
@@ -98,6 +101,10 @@ public class Card {
 
     public int getWidth() {
         return width;
+    }
+
+    public int getInitialDefense() {
+        return initialDefense;
     }
 
     public enum SpecialCardType {

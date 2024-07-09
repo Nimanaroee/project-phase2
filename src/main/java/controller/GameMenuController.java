@@ -8,14 +8,14 @@ import javafx.scene.layout.HBox;
 import game.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import model.CardGraphic;
-import model.Data;
+import model.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class GameMenuController {
+    public static Player playingPlayer;
     public static Game game;
     ArrayList<CardGraphic> hand1 = new ArrayList<>();
     ArrayList<CardGraphic> hand2 = new ArrayList<>();
@@ -53,12 +53,13 @@ public class GameMenuController {
     private Label player2HP;
 
     @FXML
-    private Label player1HP1;
+    private Label player1HP;
     @FXML
     private Label Round;
 
     @FXML
     private void initialize() {
+        playingPlayer = game.getPlayer1();
         ArrayList<Card> player1Hand = (ArrayList<Card>) game.getPlayer1Hand();
         for (Card card : player1Hand) {
             hand1.add(new CardGraphic(CardToCardConvertor.convertCardToCardModel(card)));
@@ -99,14 +100,96 @@ public class GameMenuController {
         player2boardHbox.getChildren().addAll(createCardViewsForBoard(board2, true));
         player2boardHbox.setSpacing(10);
         player2board.setContent(player2boardHbox);
-        player1HP1.setText("HP: " + game.getPlayer1().getHealth());
+        player1HP.setText("HP: " + game.getPlayer1().getHealth());
         player2HP.setText("HP: " + game.getPlayer2().getHealth());
         Round.setText("Round: " + game.getCurrentRound());
     }
 
     @FXML
     private void onClickEndTurnButton() {
-        System.out.println("End Turn button clicked");
+        if (!game.isGameOver() && playingPlayer == game.getPlayer2()) {
+            if (game.getCurrentRound() < 3) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("End of the round");
+                alert.setHeaderText("End of the round");
+                alert.setContentText("Round ended");
+                alert.showAndWait();
+                game.setCurrentRound(game.getCurrentRound() + 1);
+                game.getPlayer1().drawCard();
+                game.getPlayer2().drawCard();
+            } else {
+                endOfTheTurn();
+                game.setCurrentRound(1);
+            }
+        }
+        if (playingPlayer == game.getPlayer1()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("End of the players 1 turn");
+            alert.setHeaderText("End of the players 1 turn");
+            alert.setContentText("Player 1 turn ended");
+            alert.showAndWait();
+            playingPlayer = game.getPlayer2();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("End of the players 2 turn");
+            alert.setHeaderText("End of the players 2 turn");
+            alert.setContentText("Player 2 turn ended");
+            alert.showAndWait();
+            playingPlayer = game.getPlayer1();
+        }
+        if (game.isGameOver()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            Player winner = game.getPlayer1().getHealth() > game.getPlayer2().getHealth() ? game.getPlayer1() : game.getPlayer2();
+            alert.setTitle("Game Over");
+            alert.setHeaderText("Game Over");
+            alert.setContentText("Player" + winner.getName() + " wins!");
+            alert.showAndWait();
+            endGame();
+        }
+        updateAll();
+
+    }
+
+    private void endGame() {
+        if (game.getPlayer1().getHealth() <= 0) {
+            Data.getLoggedInUser1().addHistory(new DataHistory("date", Data.getLoggedInUser2().getNickname() + " Won", Data.getLoggedInUser2().getNickname(), ((Integer) Data.getLoggedInUser2().getLevel()).toString(), "100 coins"));
+            Data.getLoggedInUser2().addHistory(new DataHistory("date", Data.getLoggedInUser2().getNickname() + " Won", Data.getLoggedInUser1().getNickname(), ((Integer) Data.getLoggedInUser1().getLevel()).toString(), "100 coins"));
+        } else {
+            Data.getLoggedInUser2().addHistory(new DataHistory("date", Data.getLoggedInUser1().getNickname() + " Won", Data.getLoggedInUser1().getNickname(), ((Integer) Data.getLoggedInUser1().getLevel()).toString(), "100 coins"));
+            Data.getLoggedInUser1().addHistory(new DataHistory("date", Data.getLoggedInUser1().getNickname() + " Won", Data.getLoggedInUser2().getNickname(), ((Integer) Data.getLoggedInUser2().getLevel()).toString(), "100 coins"));
+        }
+        GsonHandler gsonHandler = new GsonHandler();
+        gsonHandler.saveUserGson();
+        //temp
+        System.exit(0);
+    }
+
+
+    private void endOfTheTurn() {
+        for (int i = 0; i < game.getPlayer1Board().size(); i++) {
+            if (game.getPlayer1Board().get(i) != null && game.getPlayer2Board().get(i) != null) {
+                if (game.getPlayer1Board().get(i).getDamage() >= game.getPlayer2Board().get(i).getDefense()) {
+                    game.getPlayer2().setHealth(game.getPlayer2().getHealth() - game.getPlayer1Board().get(i).getDamage() + game.getPlayer2Board().get(i).getDefense());
+                    game.getPlayer2Board().set(i, null);
+//                    System.out.println("1");
+                } else if (game.getPlayer2Board().get(i).getDamage() >= game.getPlayer1Board().get(i).getDefense()) {
+                    game.getPlayer1().setHealth(game.getPlayer1().getHealth() - game.getPlayer2Board().get(i).getDamage() + game.getPlayer1Board().get(i).getDefense());
+                    game.getPlayer1Board().set(i, null);
+//                    System.out.println("2");
+                } else {
+                    game.getPlayer1Board().get(i).setDefense(game.getPlayer1Board().get(i).getDefense() - game.getPlayer2Board().get(i).getDamage());
+                    game.getPlayer2Board().get(i).setDefense(game.getPlayer2Board().get(i).getDefense() - game.getPlayer1Board().get(i).getDamage());
+//                    System.out.println("3");
+                }
+            } else if (game.getPlayer1Board().get(i) != null && game.getPlayer2Board().get(i) == null) {
+                game.getPlayer2().setHealth(game.getPlayer2().getHealth() - game.getPlayer1Board().get(i).getDamage());
+//                System.out.println("4");
+            } else if (game.getPlayer2Board().get(i) != null && game.getPlayer1Board().get(i) == null) {
+                game.getPlayer1().setHealth(game.getPlayer1().getHealth() - game.getPlayer2Board().get(i).getDamage());
+//                System.out.println("5");
+            }
+
+        }
 
     }
 
@@ -128,11 +211,12 @@ public class GameMenuController {
             VBox cardBox = new VBox(card, createCardDetailsForBoard(card));
             cardBox.setOnMouseClicked(event -> handleMouseEvent(event, card, isLocked));
             cardBox.setOnDragOver(event -> handleDragOver(event, card));
-            cardBox.setOnDragDropped(event -> handleDragDropped(event, card));
+            cardBox.setOnDragDropped(event -> handleDragDropped(event, card)); // Ensure this is set for all cards
             cardViews.add(cardBox);
         }
         return cardViews;
     }
+
 
     public VBox createCardDetails(CardGraphic card) {
         VBox detailsBox = new VBox();
@@ -183,72 +267,99 @@ public class GameMenuController {
     }
 
     private void handleDragDropped(DragEvent event, CardGraphic targetCard) {
+        System.out.println("fuckin help me");
         System.out.println(targetCard.getCard().getName());
         Dragboard db = event.getDragboard();
         boolean success = false;
-        if (db.hasString() && targetCard.getCard().getName().equals("empty")) {
-            String draggedCardName = db.getString();
-            CardGraphic draggedCard = findCardByName(draggedCardName);
-            boolean durationIsOkay = true;
-            int board = 0;
-            int targetIndex;
-            targetIndex = board1.indexOf(targetCard);
-            board = 1;
-            if (targetIndex == -1) {
-                targetIndex = board2.indexOf(targetCard);
-                board = 2;
-            }
-            for (int i = 0; i < draggedCard.getCard().getDuration(); i++) {
-                if (board == 1) {
-                    if (!board1.get(targetIndex + i).getCard().getName().contains("empty")) {
-                        durationIsOkay = false;
-                        break;
-                    }
-                } else {
-                    if (!board2.get(targetIndex + i).getCard().getName().contains("empty")) {
-                        System.out.println("!" + board2.get(targetIndex + i).getCard().getName());
-                        durationIsOkay = false;
-                        break;
-                    }
-                }
-            }
-            System.out.println(durationIsOkay);
-            if (!(CardToCardConvertor.convertCardModelToCard(draggedCard.getCard()).getType() == Card.SpecialCardType.NORMAL)) {
-                durationIsOkay = false;
-//                handleSpecialCardDragged(draggedCard, targetCard, board, targetIndex);
-            }
-            if (durationIsOkay && draggedCard != null) {
-                for (int i = 0; i < draggedCard.getCard().getDuration(); i++) {
-                    if (board == 1) {
-                        board1.set(targetIndex + i, draggedCard);
-                        game.getPlayer1Board().set(targetIndex + i, CardToCardConvertor.convertCardModelToCard(draggedCard.getCard()));
-                    } else {
-                        board2.set(targetIndex + i, draggedCard);
-                        game.getPlayer2Board().set(targetIndex + i, CardToCardConvertor.convertCardModelToCard(draggedCard.getCard()));
-                    }
-                }
-                if (board == 1) {
-                    for (int i = 0; i < game.getPlayer1Hand().size(); i++) {
-                        if (game.getPlayer1Hand().get(i).getName().equals(draggedCard.getCard().getName())) {
-                            game.getPlayer1Hand().remove(i);
-                            break;
-                        }
-                    }
 
-
-                } else {
-                    for (int i = 0; i < game.getPlayer2Hand().size(); i++) {
-                        if (game.getPlayer2Hand().get(i).getName().equals(draggedCard.getCard().getName())) {
-                            game.getPlayer2Hand().remove(i);
-                            break;
-                        }
-                    }
-                }
-                updateAll();
-                success = true;
-            }
-
+        String draggedCardName = db.getString();
+        CardGraphic draggedCard = findCardByName(draggedCardName);
+        boolean durationIsOkay = true;
+        int board = 0;
+        int targetIndex;
+        targetIndex = board1.indexOf(targetCard);
+        board = 1;
+        if (targetIndex == -1) {
+            targetIndex = board2.indexOf(targetCard);
+            board = 2;
         }
+        for (int i = 0; i < draggedCard.getCard().getDuration(); i++) {
+            if (board == 1) {
+                if (!board1.get(targetIndex + i).getCard().getName().contains("empty")) {
+                    durationIsOkay = false;
+                    break;
+                }
+            } else {
+                if (!board2.get(targetIndex + i).getCard().getName().contains("empty")) {
+                    System.out.println("!" + board2.get(targetIndex + i).getCard().getName());
+                    durationIsOkay = false;
+                    break;
+                }
+            }
+        }
+        boolean isNormal = true;
+        if (!(CardToCardConvertor.convertCardModelToCard(draggedCard.getCard()).getType() == Card.SpecialCardType.NORMAL)) {
+            isNormal = false;
+        }
+        if (isNormal) {
+            if (db.hasString() && targetCard.getCard().getName().equals("empty")) {
+                if (durationIsOkay && draggedCard != null) {
+                    for (int i = 0; i < draggedCard.getCard().getDuration(); i++) {
+                        if (board == 1 && playingPlayer == game.getPlayer1()) {
+                            board1.set(targetIndex + i, draggedCard);
+                            game.getPlayer1Board().set(targetIndex + i, CardToCardConvertor.convertCardModelToCard(draggedCard.getCard()));
+                        } else if (board == 2 && playingPlayer == game.getPlayer2()) {
+                            board2.set(targetIndex + i, draggedCard);
+                            game.getPlayer2Board().set(targetIndex + i, CardToCardConvertor.convertCardModelToCard(draggedCard.getCard()));
+                        }
+                    }
+                    if (board == 1 && playingPlayer == game.getPlayer1()) {
+                        for (int i = 0; i < game.getPlayer1Hand().size(); i++) {
+                            if (game.getPlayer1Hand().get(i).getName().equals(draggedCard.getCard().getName())) {
+                                game.getPlayer1Hand().remove(i);
+                                break;
+                            }
+                        }
+
+
+                    } else if (board == 2 && playingPlayer == game.getPlayer2()) {
+                        for (int i = 0; i < game.getPlayer2Hand().size(); i++) {
+                            if (game.getPlayer2Hand().get(i).getName().equals(draggedCard.getCard().getName())) {
+                                game.getPlayer2Hand().remove(i);
+                                break;
+                            }
+                        }
+                    }
+                    updateAll();
+                    success = true;
+                }
+            }
+        }
+        if (!isNormal) {
+            System.out.println("special");
+            SpecialCard playedCard = (SpecialCard) CardToCardConvertor.convertCardModelToCard(draggedCard.getCard());
+            if (playingPlayer == game.getPlayer1()) {
+                playedCard.play(game.getGameBoard(), targetIndex, game.getPlayer1(), game.getPlayer2());
+                for (int i = 0; i < game.getPlayer1Hand().size(); i++) {
+                    if (game.getPlayer1Hand().get(i).getName().equals(draggedCard.getCard().getName())) {
+                        game.getPlayer1Hand().remove(i);
+                        break;
+                    }
+                }
+            } else if (playingPlayer == game.getPlayer2()) {
+                playedCard.play(game.getGameBoard(), targetIndex, game.getPlayer2(), game.getPlayer1());
+                for (int i = 0; i < game.getPlayer2Hand().size(); i++) {
+                    if (game.getPlayer2Hand().get(i).getName().equals(draggedCard.getCard().getName())) {
+                        game.getPlayer2Hand().remove(i);
+                        break;
+                    }
+                }
+            }
+
+            updateAll();
+            success = true;
+        }
+
         event.setDropCompleted(success);
         event.consume();
     }
@@ -302,7 +413,7 @@ public class GameMenuController {
         player2boardHbox.getChildren().addAll(createCardViewsForBoard(board2, true));
         player2boardHbox.setSpacing(10);
         player2board.setContent(player2boardHbox);
-        player1HP1.setText("HP: " + game.getPlayer1().getHealth());
+        player1HP.setText("HP: " + game.getPlayer1().getHealth());
         player2HP.setText("HP: " + game.getPlayer2().getHealth());
         Round.setText("Round: " + game.getCurrentRound());
     }
