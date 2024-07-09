@@ -1,9 +1,9 @@
 package controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.*;
 import javafx.scene.layout.HBox;
 import game.*;
 import javafx.scene.layout.VBox;
@@ -35,7 +35,6 @@ public class GameMenuController {
 
     @FXML
     private HBox player1handHbox;
-
 
     @FXML
     private ScrollPane player1board;
@@ -102,8 +101,6 @@ public class GameMenuController {
         player1HP1.setText("HP: " + game.getPlayer1().getHealth());
         player2HP.setText("HP: " + game.getPlayer2().getHealth());
         Round.setText("Round: " + game.getCurrentRound());
-
-
     }
 
     @FXML
@@ -116,6 +113,8 @@ public class GameMenuController {
         for (CardGraphic card : cards) {
             VBox cardBox = new VBox(card, createCardDetails(card));
             cardBox.setOnMouseClicked(event -> handleMouseEvent(event, card, isLocked));
+            cardBox.setOnDragOver(event -> handleDragOver(event, card));
+            cardBox.setOnDragDropped(event -> handleDragDropped(event, card));
             cardViews.add(cardBox);
         }
         return cardViews;
@@ -135,33 +134,9 @@ public class GameMenuController {
     }
 
     public void handleMouseEvent(MouseEvent event, CardGraphic card, boolean isLocked) {
-        if (event.getButton() == MouseButton.SECONDARY) {
-            ContextMenu contextMenu = new ContextMenu();
-            MenuItem actionItem = isLocked ? new MenuItem("Buy") : new MenuItem("Upgrade");
 
-            actionItem.setOnAction(e -> {
-                Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
-                confirmationAlert.setTitle("Confirmation");
-                confirmationAlert.setHeaderText(null);
-                confirmationAlert.setContentText(isLocked ? "Do you want to buy this card?" : "Do you want to upgrade this card?");
 
-                Optional<ButtonType> result = confirmationAlert.showAndWait();
-                if (result.isPresent() && result.get() == ButtonType.OK) {
-                    if (isLocked) {
-                        card.setFill(Color.YELLOW); // Indicate the card is unlocked
-
-                        Data.getLoggedInUser1().addCard(card.getCard());
-                        // Refresh the UI to move the card from locked to unlocked
-                    } else {
-                        Data.getLoggedInUser1().updateCard(card.getCard());
-                    }
-                    initialize();
-                }
-            });
-
-            contextMenu.getItems().add(actionItem);
-            contextMenu.show(card, event.getScreenX(), event.getScreenY());
-        } else if (event.getButton() == MouseButton.PRIMARY) {
+        if (event.getButton() == MouseButton.PRIMARY) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Card Information");
             alert.setHeaderText(card.getCard().getName());
@@ -175,6 +150,110 @@ public class GameMenuController {
             );
             alert.showAndWait();
         }
-
     }
+
+    public void handleDragOver(DragEvent event, CardGraphic targetCard) {
+        if (event.getGestureSource() != targetCard && event.getDragboard().hasString()) {
+            event.acceptTransferModes(TransferMode.MOVE);
+        }
+        event.consume();
+    }
+
+    private void handleDragDropped(DragEvent event, CardGraphic targetCard) {
+        System.out.println(targetCard.getCard().getName());
+        Dragboard db = event.getDragboard();
+        boolean success = false;
+        if (db.hasString() && targetCard.getCard().getName().equals("empty")) {
+            String draggedCardName = db.getString();
+            CardGraphic draggedCard = findCardByName(draggedCardName);
+            boolean durationIsOkay = true;
+
+            if (targetCard.getParent() instanceof HBox) {
+                HBox parent = (HBox) targetCard.getParent();
+                int targetIndex = parent.getChildren().indexOf(targetCard);
+                System.out.println(targetIndex);
+                for (int i = 0; i < draggedCard.getCard().getDuration(); i++) {
+                    if (targetIndex + i >= parent.getChildren().size() ||
+                            !isCardGraphicEmpty((VBox) parent.getChildren().get(targetIndex + i))) {
+                        durationIsOkay = false;
+                        System.out.println("Duration is not okay");
+                        break;
+                    }
+                }
+
+                if (durationIsOkay && draggedCard != null) {
+                    for (int i = 0; i < draggedCard.getCard().getDuration(); i++) {
+                        replaceCard((VBox) parent.getChildren().get(targetIndex + i), draggedCard);
+                    }
+                    success = true;
+                }
+            } else if (targetCard.getParent() instanceof VBox) {
+                VBox parent = (VBox) targetCard.getParent();
+                int targetIndex = parent.getChildren().indexOf(targetCard);
+                System.out.println(targetIndex);
+                for (int i = 0; i < draggedCard.getCard().getDuration(); i++) {
+                    if (targetIndex + i >= parent.getChildren().size() ||
+                            !isCardGraphicEmpty((VBox) parent.getChildren().get(targetIndex + i))) {
+                        durationIsOkay = false;
+                        System.out.println("Duration is not okay");
+                        break;
+                    }
+                }
+
+                if (durationIsOkay && draggedCard != null) {
+                    for (int i = 0; i < draggedCard.getCard().getDuration(); i++) {
+                        replaceCard((VBox) parent.getChildren().get(targetIndex + i), draggedCard);
+                    }
+                    success = true;
+                }
+            }
+        }
+        event.setDropCompleted(success);
+        event.consume();
+    }
+
+    private boolean isCardGraphicEmpty(VBox vbox) {
+        if (vbox.getChildren().isEmpty()) {
+            return false;
+        }
+        Node node = vbox.getChildren().get(0);
+        if (node instanceof CardGraphic) {
+            CardGraphic cardGraphic = (CardGraphic) node;
+            return cardGraphic.getCard().getName().equals("empty");
+        }
+        return false;
+    }
+
+    private void replaceCard(VBox targetVBox, CardGraphic newCard) {
+        targetVBox.getChildren().clear();
+        targetVBox.getChildren().add(newCard);
+    }
+
+    private CardGraphic findCardByName(String name) {
+        for (CardGraphic card : hand1) {
+            if (card.getCard().getName().equals(name)) {
+                return card;
+            }
+        }
+        for (CardGraphic card : hand2) {
+            if (card.getCard().getName().equals(name)) {
+                return card;
+            }
+        }
+        return null;
+    }
+
+    private void replaceCard(CardGraphic targetCard, CardGraphic newCard) {
+        if (targetCard.getParent() instanceof HBox) {
+            HBox parent = (HBox) targetCard.getParent();
+            int index = parent.getChildren().indexOf(targetCard);
+            parent.getChildren().set(index, newCard);
+        } else if (targetCard.getParent() instanceof VBox) {
+            VBox parent = (VBox) targetCard.getParent();
+            int index = parent.getChildren().indexOf(targetCard);
+            parent.getChildren().set(index, newCard);
+        }
+    }
+
+
 }

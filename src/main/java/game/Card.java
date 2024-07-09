@@ -27,7 +27,7 @@ public class Card {
         this.defense = initialDefense;
         this.shopCost = shopCost;
         this.width = width;
-        System.out.println("Card created: " + name);
+//        System.out.println("Card created: " + name);
     }
 
     public static void showCard(Card card) {
