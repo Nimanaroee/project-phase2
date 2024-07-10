@@ -71,6 +71,8 @@ public class GameMenuController {
     @FXML
     private ProgressIndicator wheelOfChance;
 
+    private boolean tof = false;
+
     @FXML
     private void initialize() {
         CardGraphic.controller = this;
@@ -401,6 +403,8 @@ public class GameMenuController {
     }
 
     private void updateAll() {
+        if (tof)
+            return;
         board1.clear();
         board2.clear();
         player1boardHbox.getChildren().clear();
@@ -463,6 +467,7 @@ public class GameMenuController {
 //            alert.setContentText("Player" + winner.getName() + " wins!");
 //            alert.showAndWait();
             /// set game data
+            tof = true;
 
             if (game.getPlayer1().getHealth() <= 0)
                 DataGame.result = Data.getLoggedInUser2().getNickname();

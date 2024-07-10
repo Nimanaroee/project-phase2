@@ -1,10 +1,13 @@
 package controller;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
+import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import model.GraphicData;
@@ -24,8 +27,9 @@ public class SettingMenuController {
         volumeBar.setValue(GraphicData.backgroundSound.getVolume());
 
         // Add background and sound options
-        backgroundChoice.getItems().addAll("1", "2");
-        backgroundChoice.setValue("1");
+        backgroundChoice.getItems().addAll("background1", "background2", "background3", "background4", "background5");
+        backgroundChoice.setValue("background1");
+
 
         soundChoice.getItems().addAll("sound track 1", "sound track 2");
         soundChoice.setValue("sound track 1");
@@ -55,10 +59,21 @@ public class SettingMenuController {
                 GraphicData.backgroundSound.setVolume(newValue.doubleValue());
             }
         });
+
+        // Add listener to backgroundChoice
+        backgroundChoice.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            updateBackgroundImage(newValue);
+        });
+
+        // Set initial background image
+        updateBackgroundImage(backgroundChoice.getValue());
+    }
+
+    private void updateBackgroundImage(String choice) {
+        GraphicData.backgroundTheme = choice;
     }
 
     public void onClickSaveButton(ActionEvent actionEvent) {
-        GraphicData.backgroundTheme = backgroundChoice.getValue();
         Alert errorAlert = new Alert(Alert.AlertType.INFORMATION);
         errorAlert.setContentText("Saved changes!");
         errorAlert.showAndWait();

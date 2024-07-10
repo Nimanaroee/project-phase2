@@ -19,6 +19,7 @@ public class RegisterMenuView extends Application {
         Data.gsonHandler.readUserGSON();
         Data.gsonHandler.readCardGSON();
 
+        GraphicData.backgroundTheme = "background1";
         /// loading music
         GraphicData.backgroundSound = new MediaPlayer(new Media(new File("src/main/resources/music/1.mp3").toURI().toString()));
         GraphicData.backgroundSound.play();

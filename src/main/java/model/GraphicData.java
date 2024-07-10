@@ -1,5 +1,6 @@
 package model;
 
+import javafx.scene.image.Image;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 

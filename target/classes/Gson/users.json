@@ -3,6 +3,418 @@
     "level": 1,
     "hp": 100,
     "xp": 0,
+    "gold": 0,
+    "cardModels": [
+      {
+        "name": "2swift−justice",
+        "defence": 52,
+        "duration": 1,
+        "damage": 36,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1bullet−strike",
+        "defence": 25,
+        "duration": 3,
+        "damage": 33,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1from−the−hip",
+        "defence": 45,
+        "duration": 1,
+        "damage": 25,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1acid−evaporation",
+        "defence": 35,
+        "duration": 2,
+        "damage": 30,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2ion−brust",
+        "defence": 28,
+        "duration": 3,
+        "damage": 28,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1low−blow",
+        "defence": 25,
+        "duration": 1,
+        "damage": 36,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2flash−pellets",
+        "defence": 20,
+        "duration": 2,
+        "damage": 27,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2acid−evaporation",
+        "defence": 35,
+        "duration": 2,
+        "damage": 30,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1kate\u0027sHeal-support",
+        "defence": 10,
+        "duration": 0,
+        "damage": 10,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1SuperiorShield-support",
+        "defence": 20,
+        "duration": 2,
+        "damage": 0,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2zeusDamage-support",
+        "defence": 10,
+        "duration": 0,
+        "damage": 10,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1biker−helper",
+        "defence": 45,
+        "duration": 3,
+        "damage": 20,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1BombRush-support",
+        "defence": 0,
+        "duration": 10,
+        "damage": 12,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2acidRainBomb-support",
+        "defence": 0,
+        "duration": 5,
+        "damage": 18,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2BombRush-support",
+        "defence": 0,
+        "duration": 10,
+        "damage": 12,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2cryo−meltdown",
+        "defence": 28,
+        "duration": 2,
+        "damage": 20,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2from−the−hip",
+        "defence": 45,
+        "duration": 1,
+        "damage": 25,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1acidRainBomb-support",
+        "defence": 0,
+        "duration": 5,
+        "damage": 18,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2stealth−helper",
+        "defence": 15,
+        "duration": 1,
+        "damage": 10,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      }
+    ],
+    "histories": [],
+    "username": "sina",
+    "nickname": "aghabmande",
+    "password": "abcD1234!",
+    "email": "aghabmande@gmail.com",
+    "question": "• 1-What is your father’s name ?",
+    "answer": "parham",
+    "character": 1
+  },
+  {
+    "level": 1,
+    "hp": 100,
+    "xp": 0,
+    "gold": 0,
+    "cardModels": [
+      {
+        "name": "2swift−justice",
+        "defence": 52,
+        "duration": 1,
+        "damage": 36,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1bullet−strike",
+        "defence": 25,
+        "duration": 3,
+        "damage": 33,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1from−the−hip",
+        "defence": 45,
+        "duration": 1,
+        "damage": 25,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1acid−evaporation",
+        "defence": 35,
+        "duration": 2,
+        "damage": 30,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2ion−brust",
+        "defence": 28,
+        "duration": 3,
+        "damage": 28,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1low−blow",
+        "defence": 25,
+        "duration": 1,
+        "damage": 36,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2flash−pellets",
+        "defence": 20,
+        "duration": 2,
+        "damage": 27,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2acid−evaporation",
+        "defence": 35,
+        "duration": 2,
+        "damage": 30,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1kate\u0027sHeal-support",
+        "defence": 10,
+        "duration": 0,
+        "damage": 10,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1SuperiorShield-support",
+        "defence": 20,
+        "duration": 2,
+        "damage": 0,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2zeusDamage-support",
+        "defence": 10,
+        "duration": 0,
+        "damage": 10,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1biker−helper",
+        "defence": 45,
+        "duration": 3,
+        "damage": 20,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1BombRush-support",
+        "defence": 0,
+        "duration": 10,
+        "damage": 12,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2acidRainBomb-support",
+        "defence": 0,
+        "duration": 5,
+        "damage": 18,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2BombRush-support",
+        "defence": 0,
+        "duration": 10,
+        "damage": 12,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2cryo−meltdown",
+        "defence": 28,
+        "duration": 2,
+        "damage": 20,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2from−the−hip",
+        "defence": 45,
+        "duration": 1,
+        "damage": 25,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1acidRainBomb-support",
+        "defence": 0,
+        "duration": 5,
+        "damage": 18,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2stealth−helper",
+        "defence": 15,
+        "duration": 1,
+        "damage": 10,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      }
+    ],
+    "histories": [],
+    "username": "sina",
+    "nickname": "aghabmande",
+    "password": "abcD1234!",
+    "email": "aghabmande@gmail.com",
+    "question": "• 1-What is your father’s name ?",
+    "answer": "parham",
+    "character": 1
+  },
+  {
+    "level": 1,
+    "hp": 100,
+    "xp": 0,
     "gold": 100,
     "cardModels": [
       {
@@ -299,6 +711,55 @@
         "opponentName": "naroee",
         "opponentLevel": "1",
         "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:37:38.525704",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:37:39.519135",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:37:40.519607",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:37:41.506237",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:37:42.517816",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:37:43.518820",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:37:43.554016",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
       }
     ],
     "username": "parham",
@@ -308,6 +769,512 @@
     "question": "• 2-What is your favourite color ?",
     "answer": "Brown",
     "character": 0
+  },
+  {
+    "level": 1,
+    "hp": 100,
+    "xp": 0,
+    "gold": 0,
+    "cardModels": [
+      {
+        "name": "1ultra−sonic−brust",
+        "defence": 20,
+        "duration": 2,
+        "damage": 33,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2bullet−strike",
+        "defence": 25,
+        "duration": 3,
+        "damage": 33,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2side−winder",
+        "defence": 35,
+        "duration": 2,
+        "damage": 26,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1poison−dispersal",
+        "defence": 20,
+        "duration": 4,
+        "damage": 29,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2ultra−sonic−brust",
+        "defence": 20,
+        "duration": 2,
+        "damage": 33,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1swift−justice",
+        "defence": 52,
+        "duration": 1,
+        "damage": 36,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 25,
+        "percentage": 0
+      },
+      {
+        "name": "1cryo−meltdown",
+        "defence": 28,
+        "duration": 2,
+        "damage": 20,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1HolyShield-support",
+        "defence": 23,
+        "duration": 1,
+        "damage": 28,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      }
+    ],
+    "histories": [
+      {
+        "date": "2024-07-10T14:04:34.756127",
+        "result": "KAYAN Won",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T14:04:35.753997",
+        "result": "KAYAN Won",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T14:04:36.755065",
+        "result": "KAYAN Won",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T14:04:37.752905",
+        "result": "KAYAN Won",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T14:04:37.789027",
+        "result": "KAYAN Won",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:44:09.793459",
+        "result": "KAYAN Won",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      }
+    ],
+    "username": "Kian",
+    "nickname": "KAYAN",
+    "password": "Passwordnadaram!4",
+    "email": "kiankhadem@icloud.com",
+    "question": "• 3-What was the name of your first pet?",
+    "answer": "Ali",
+    "character": 1
+  },
+  {
+    "level": 1,
+    "hp": 100,
+    "xp": 0,
+    "gold": 0,
+    "cardModels": [
+      {
+        "name": "1ultra−sonic−brust",
+        "defence": 20,
+        "duration": 2,
+        "damage": 33,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2bullet−strike",
+        "defence": 25,
+        "duration": 3,
+        "damage": 33,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2side−winder",
+        "defence": 35,
+        "duration": 2,
+        "damage": 26,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1poison−dispersal",
+        "defence": 20,
+        "duration": 4,
+        "damage": 29,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2ultra−sonic−brust",
+        "defence": 20,
+        "duration": 2,
+        "damage": 33,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1swift−justice",
+        "defence": 52,
+        "duration": 1,
+        "damage": 36,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 25,
+        "percentage": 0
+      },
+      {
+        "name": "1cryo−meltdown",
+        "defence": 28,
+        "duration": 2,
+        "damage": 20,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1HolyShield-support",
+        "defence": 23,
+        "duration": 1,
+        "damage": 28,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      }
+    ],
+    "histories": [
+      {
+        "date": "2024-07-10T14:04:34.756127",
+        "result": "KAYAN Lost",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T14:04:35.753997",
+        "result": "KAYAN Lost",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T14:04:36.755065",
+        "result": "KAYAN Lost",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T14:04:37.752905",
+        "result": "KAYAN Lost",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T14:04:37.789027",
+        "result": "KAYAN Lost",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:44:09.793459",
+        "result": "KAYAN Lost",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      }
+    ],
+    "username": "Kian",
+    "nickname": "KAYAN",
+    "password": "Passwordnadaram!4",
+    "email": "kiankhadem@icloud.com",
+    "question": "• 3-What was the name of your first pet?",
+    "answer": "Ali",
+    "character": 1
+  },
+  {
+    "level": 1,
+    "hp": 100,
+    "xp": 0,
+    "gold": 0,
+    "cardModels": [
+      {
+        "name": "2low−blow",
+        "defence": 25,
+        "duration": 1,
+        "damage": 36,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2ion−brust",
+        "defence": 28,
+        "duration": 3,
+        "damage": 28,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2poison−dispersal",
+        "defence": 20,
+        "duration": 4,
+        "damage": 29,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1sonar−strike",
+        "defence": 28,
+        "duration": 2,
+        "damage": 16,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1acid−evaporation",
+        "defence": 35,
+        "duration": 2,
+        "damage": 30,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2acid−evaporation",
+        "defence": 35,
+        "duration": 2,
+        "damage": 30,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1ion−blast",
+        "defence": 10,
+        "duration": 2,
+        "damage": 27,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2kate\u0027sHeal-support",
+        "defence": 10,
+        "duration": 0,
+        "damage": 10,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1cardDeleter-support",
+        "defence": 10,
+        "duration": 0,
+        "damage": 10,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      }
+    ],
+    "histories": [
+      {
+        "date": "2024-07-10T21:47:45.314280",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      }
+    ],
+    "username": "ahmad",
+    "nickname": "zoghi",
+    "password": "Ahmad1!",
+    "email": "ahmad@gmail.com",
+    "question": "• 2-What is your favourite color ?",
+    "answer": "joon",
+    "character": 1
+  },
+  {
+    "level": 1,
+    "hp": 100,
+    "xp": 0,
+    "gold": 0,
+    "cardModels": [
+      {
+        "name": "2low−blow",
+        "defence": 25,
+        "duration": 1,
+        "damage": 36,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2ion−brust",
+        "defence": 28,
+        "duration": 3,
+        "damage": 28,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2poison−dispersal",
+        "defence": 20,
+        "duration": 4,
+        "damage": 29,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1sonar−strike",
+        "defence": 28,
+        "duration": 2,
+        "damage": 16,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1acid−evaporation",
+        "defence": 35,
+        "duration": 2,
+        "damage": 30,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2acid−evaporation",
+        "defence": 35,
+        "duration": 2,
+        "damage": 30,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1ion−blast",
+        "defence": 10,
+        "duration": 2,
+        "damage": 27,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2kate\u0027sHeal-support",
+        "defence": 10,
+        "duration": 0,
+        "damage": 10,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1cardDeleter-support",
+        "defence": 10,
+        "duration": 0,
+        "damage": 10,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      }
+    ],
+    "histories": [
+      {
+        "date": "2024-07-10T22:02:49.672410",
+        "result": "zoghi Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      }
+    ],
+    "username": "ahmad",
+    "nickname": "zoghi",
+    "password": "Ahmad1!",
+    "email": "ahmad@gmail.com",
+    "question": "• 2-What is your favourite color ?",
+    "answer": "joon",
+    "character": 1
   },
   {
     "level": 1,
@@ -588,6 +1555,69 @@
         "opponentName": "pmshw",
         "opponentLevel": "1",
         "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:37:38.525704",
+        "result": "naroee Lost",
+        "opponentName": "pmshw",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:37:39.519135",
+        "result": "naroee Lost",
+        "opponentName": "pmshw",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:37:40.519607",
+        "result": "naroee Lost",
+        "opponentName": "pmshw",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:37:41.506237",
+        "result": "naroee Lost",
+        "opponentName": "pmshw",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:37:42.517816",
+        "result": "naroee Lost",
+        "opponentName": "pmshw",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:37:43.518820",
+        "result": "naroee Lost",
+        "opponentName": "pmshw",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:37:43.554016",
+        "result": "naroee Lost",
+        "opponentName": "pmshw",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T21:47:45.314280",
+        "result": "naroee Lost",
+        "opponentName": "zoghi",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T22:02:49.672410",
+        "result": "naroee Lost",
+        "opponentName": "zoghi",
+        "opponentLevel": "1",
+        "prize": "0"
       }
     ],
     "username": "nima",
@@ -597,681 +1627,5 @@
     "question": "• 2-What is your favourite color ?",
     "answer": "blue",
     "character": 0
-  },
-  {
-    "level": 1,
-    "hp": 100,
-    "xp": 0,
-    "gold": 0,
-    "cardModels": [
-      {
-        "name": "1ultra−sonic−brust",
-        "defence": 20,
-        "duration": 2,
-        "damage": 33,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2bullet−strike",
-        "defence": 25,
-        "duration": 3,
-        "damage": 33,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2side−winder",
-        "defence": 35,
-        "duration": 2,
-        "damage": 26,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1poison−dispersal",
-        "defence": 20,
-        "duration": 4,
-        "damage": 29,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2ultra−sonic−brust",
-        "defence": 20,
-        "duration": 2,
-        "damage": 33,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1swift−justice",
-        "defence": 52,
-        "duration": 1,
-        "damage": 36,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 25,
-        "percentage": 0
-      },
-      {
-        "name": "1cryo−meltdown",
-        "defence": 28,
-        "duration": 2,
-        "damage": 20,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1HolyShield-support",
-        "defence": 23,
-        "duration": 1,
-        "damage": 28,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      }
-    ],
-    "histories": [
-      {
-        "date": "2024-07-10T14:04:34.756127",
-        "result": "KAYAN Won",
-        "opponentName": "KAYAN",
-        "opponentLevel": "1",
-        "prize": "0"
-      },
-      {
-        "date": "2024-07-10T14:04:35.753997",
-        "result": "KAYAN Won",
-        "opponentName": "KAYAN",
-        "opponentLevel": "1",
-        "prize": "0"
-      },
-      {
-        "date": "2024-07-10T14:04:36.755065",
-        "result": "KAYAN Won",
-        "opponentName": "KAYAN",
-        "opponentLevel": "1",
-        "prize": "0"
-      },
-      {
-        "date": "2024-07-10T14:04:37.752905",
-        "result": "KAYAN Won",
-        "opponentName": "KAYAN",
-        "opponentLevel": "1",
-        "prize": "0"
-      },
-      {
-        "date": "2024-07-10T14:04:37.789027",
-        "result": "KAYAN Won",
-        "opponentName": "KAYAN",
-        "opponentLevel": "1",
-        "prize": "0"
-      }
-    ],
-    "username": "Kian",
-    "nickname": "KAYAN",
-    "password": "Passwordnadaram!4",
-    "email": "kiankhadem@icloud.com",
-    "question": "• 3-What was the name of your first pet?",
-    "answer": "Ali",
-    "character": 1
-  },
-  {
-    "level": 1,
-    "hp": 100,
-    "xp": 0,
-    "gold": 0,
-    "cardModels": [
-      {
-        "name": "1ultra−sonic−brust",
-        "defence": 20,
-        "duration": 2,
-        "damage": 33,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2bullet−strike",
-        "defence": 25,
-        "duration": 3,
-        "damage": 33,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2side−winder",
-        "defence": 35,
-        "duration": 2,
-        "damage": 26,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1poison−dispersal",
-        "defence": 20,
-        "duration": 4,
-        "damage": 29,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2ultra−sonic−brust",
-        "defence": 20,
-        "duration": 2,
-        "damage": 33,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1swift−justice",
-        "defence": 52,
-        "duration": 1,
-        "damage": 36,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 25,
-        "percentage": 0
-      },
-      {
-        "name": "1cryo−meltdown",
-        "defence": 28,
-        "duration": 2,
-        "damage": 20,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1HolyShield-support",
-        "defence": 23,
-        "duration": 1,
-        "damage": 28,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      }
-    ],
-    "histories": [
-      {
-        "date": "2024-07-10T14:04:34.756127",
-        "result": "KAYAN Lost",
-        "opponentName": "KAYAN",
-        "opponentLevel": "1",
-        "prize": "0"
-      },
-      {
-        "date": "2024-07-10T14:04:35.753997",
-        "result": "KAYAN Lost",
-        "opponentName": "KAYAN",
-        "opponentLevel": "1",
-        "prize": "0"
-      },
-      {
-        "date": "2024-07-10T14:04:36.755065",
-        "result": "KAYAN Lost",
-        "opponentName": "KAYAN",
-        "opponentLevel": "1",
-        "prize": "0"
-      },
-      {
-        "date": "2024-07-10T14:04:37.752905",
-        "result": "KAYAN Lost",
-        "opponentName": "KAYAN",
-        "opponentLevel": "1",
-        "prize": "0"
-      },
-      {
-        "date": "2024-07-10T14:04:37.789027",
-        "result": "KAYAN Lost",
-        "opponentName": "KAYAN",
-        "opponentLevel": "1",
-        "prize": "0"
-      }
-    ],
-    "username": "Kian",
-    "nickname": "KAYAN",
-    "password": "Passwordnadaram!4",
-    "email": "kiankhadem@icloud.com",
-    "question": "• 3-What was the name of your first pet?",
-    "answer": "Ali",
-    "character": 1
-  },
-  {
-    "level": 1,
-    "hp": 100,
-    "xp": 0,
-    "gold": 0,
-    "cardModels": [
-      {
-        "name": "2swift−justice",
-        "defence": 52,
-        "duration": 1,
-        "damage": 36,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1bullet−strike",
-        "defence": 25,
-        "duration": 3,
-        "damage": 33,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1from−the−hip",
-        "defence": 45,
-        "duration": 1,
-        "damage": 25,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1acid−evaporation",
-        "defence": 35,
-        "duration": 2,
-        "damage": 30,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2ion−brust",
-        "defence": 28,
-        "duration": 3,
-        "damage": 28,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1low−blow",
-        "defence": 25,
-        "duration": 1,
-        "damage": 36,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2flash−pellets",
-        "defence": 20,
-        "duration": 2,
-        "damage": 27,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2acid−evaporation",
-        "defence": 35,
-        "duration": 2,
-        "damage": 30,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1kate\u0027sHeal-support",
-        "defence": 10,
-        "duration": 0,
-        "damage": 10,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1SuperiorShield-support",
-        "defence": 20,
-        "duration": 2,
-        "damage": 0,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2zeusDamage-support",
-        "defence": 10,
-        "duration": 0,
-        "damage": 10,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1biker−helper",
-        "defence": 45,
-        "duration": 3,
-        "damage": 20,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1BombRush-support",
-        "defence": 0,
-        "duration": 10,
-        "damage": 12,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2acidRainBomb-support",
-        "defence": 0,
-        "duration": 5,
-        "damage": 18,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2BombRush-support",
-        "defence": 0,
-        "duration": 10,
-        "damage": 12,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2cryo−meltdown",
-        "defence": 28,
-        "duration": 2,
-        "damage": 20,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2from−the−hip",
-        "defence": 45,
-        "duration": 1,
-        "damage": 25,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1acidRainBomb-support",
-        "defence": 0,
-        "duration": 5,
-        "damage": 18,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2stealth−helper",
-        "defence": 15,
-        "duration": 1,
-        "damage": 10,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      }
-    ],
-    "histories": [],
-    "username": "sina",
-    "nickname": "aghabmande",
-    "password": "abcD1234!",
-    "email": "aghabmande@gmail.com",
-    "question": "• 1-What is your father’s name ?",
-    "answer": "parham",
-    "character": 1
-  },
-  {
-    "level": 1,
-    "hp": 100,
-    "xp": 0,
-    "gold": 0,
-    "cardModels": [
-      {
-        "name": "2swift−justice",
-        "defence": 52,
-        "duration": 1,
-        "damage": 36,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1bullet−strike",
-        "defence": 25,
-        "duration": 3,
-        "damage": 33,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1from−the−hip",
-        "defence": 45,
-        "duration": 1,
-        "damage": 25,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1acid−evaporation",
-        "defence": 35,
-        "duration": 2,
-        "damage": 30,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2ion−brust",
-        "defence": 28,
-        "duration": 3,
-        "damage": 28,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1low−blow",
-        "defence": 25,
-        "duration": 1,
-        "damage": 36,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2flash−pellets",
-        "defence": 20,
-        "duration": 2,
-        "damage": 27,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2acid−evaporation",
-        "defence": 35,
-        "duration": 2,
-        "damage": 30,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1kate\u0027sHeal-support",
-        "defence": 10,
-        "duration": 0,
-        "damage": 10,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1SuperiorShield-support",
-        "defence": 20,
-        "duration": 2,
-        "damage": 0,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2zeusDamage-support",
-        "defence": 10,
-        "duration": 0,
-        "damage": 10,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1biker−helper",
-        "defence": 45,
-        "duration": 3,
-        "damage": 20,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1BombRush-support",
-        "defence": 0,
-        "duration": 10,
-        "damage": 12,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2acidRainBomb-support",
-        "defence": 0,
-        "duration": 5,
-        "damage": 18,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2BombRush-support",
-        "defence": 0,
-        "duration": 10,
-        "damage": 12,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2cryo−meltdown",
-        "defence": 28,
-        "duration": 2,
-        "damage": 20,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2from−the−hip",
-        "defence": 45,
-        "duration": 1,
-        "damage": 25,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1acidRainBomb-support",
-        "defence": 0,
-        "duration": 5,
-        "damage": 18,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "2stealth−helper",
-        "defence": 15,
-        "duration": 1,
-        "damage": 10,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      }
-    ],
-    "histories": [],
-    "username": "sina",
-    "nickname": "aghabmande",
-    "password": "abcD1234!",
-    "email": "aghabmande@gmail.com",
-    "question": "• 1-What is your father’s name ?",
-    "answer": "parham",
-    "character": 1
   }
 ]

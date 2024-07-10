@@ -38,6 +38,7 @@ public class GsonHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        readUserGSON();
     }
 
     public void readCardGSON() {
@@ -60,5 +61,6 @@ public class GsonHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        readCardGSON();
     }
 }
