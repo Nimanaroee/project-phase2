@@ -13,6 +13,7 @@ import javafx.scene.shape.Rectangle;
 import model.*;
 
 import java.util.ArrayList;
+import java.util.Timer;
 
 import javafx.util.Duration;
 import view.GameOverMenuView;
@@ -20,6 +21,8 @@ import view.GameOverMenuView;
 public class GameMenuController {
     public static Player playingPlayer;
     public static Game game;
+    public static int wheelValue = 0;
+    Timeline wheelTimeline = new Timeline();
     ArrayList<CardGraphic> hand1 = new ArrayList<>();
     ArrayList<CardGraphic> hand2 = new ArrayList<>();
     ArrayList<CardGraphic> board1 = new ArrayList<>();
@@ -64,6 +67,9 @@ public class GameMenuController {
     private Label Round;
     @FXML
     private Rectangle timelineIndicator;
+
+    @FXML
+    private ProgressIndicator wheelOfChance;
 
     @FXML
     private void initialize() {
@@ -114,10 +120,46 @@ public class GameMenuController {
         Round.setText("Round: " + game.getCurrentRound());
         double stepSize = player1boardHbox.getWidth() / game.getPlayer1Board().size();
         timelineIndicator.toFront();
+
+        gamePane.getChildren().add(wheelOfChance);
+        wheelOfChance.setLayoutX(100); // Set the desired X position
+        wheelOfChance.setLayoutY(100); // Set the desired Y position
+        wheelOfChance.setPrefSize(200, 200);
+        gamePane.sceneProperty().addListener((observable, oldScene, newScene) -> {
+            if (newScene != null) {
+                newScene.setOnKeyPressed(event -> {
+                    if (event.getCode() == KeyCode.ENTER) {
+                        stopWheelOfChance(wheelTimeline);
+                        System.out.println("Wheel Value: " + wheelValue);
+                        wheelOfChance.opacityProperty().setValue(0);
+                        if (playingPlayer == game.getPlayer1()) {
+                            game.getPlayer1().setHealth(game.getPlayer1().getHealth() - wheelValue);
+                        } else {
+                            game.getPlayer2().setHealth(game.getPlayer2().getHealth() - wheelValue);
+                        }
+                        updateAll();
+                    }
+                });
+            }
+        });
+    }
+
+    private void stopWheelOfChance(Timeline timeline) {
+        if (timeline != null) {
+            timeline.stop();
+        }
     }
 
     @FXML
     private void onClickEndTurnButton() throws Exception {
+        nextRound();
+        updateAll();
+    }
+
+    public void nextRound() {
+        wheelOfChance.opacityProperty().setValue(1);
+        spinWheelOfChance(wheelTimeline);
+
         if (!game.isGameOver() && playingPlayer == game.getPlayer2()) {
             if (game.getCurrentRound() < 3) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -134,6 +176,7 @@ public class GameMenuController {
                 resetTimelineIndicator();
             }
         }
+
         if (playingPlayer == game.getPlayer1()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("End of the players 1 turn");
@@ -149,9 +192,6 @@ public class GameMenuController {
             alert.showAndWait();
             playingPlayer = game.getPlayer1();
         }
-
-        updateAll();
-
     }
 
 //    private void endGame() {
@@ -354,6 +394,10 @@ public class GameMenuController {
 
         event.setDropCompleted(success);
         event.consume();
+        if (success) {
+            nextRound();
+        }
+
     }
 
     private void updateAll() {
@@ -367,7 +411,7 @@ public class GameMenuController {
         player2handHbox.getChildren().clear();
         ArrayList<Card> player1Hand = (ArrayList<Card>) game.getPlayer1Hand();
         for (Card card : player1Hand) {
-            if (card!=null)
+            if (card != null)
                 hand1.add(new CardGraphic(CardToCardConvertor.convertCardToCardModel(card)));
         }
         player1handHbox.getChildren().clear();
@@ -467,6 +511,21 @@ public class GameMenuController {
         });
         timeline.play();
     }
+
+    private void spinWheelOfChance(Timeline timeline) {
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(0.01), event -> {
+            double progress = wheelOfChance.getProgress() + 0.01;
+            if (progress > 1) {
+                progress = 0;
+            }
+            wheelOfChance.setProgress(progress);
+            wheelValue = (int) (progress * 10);
+        });
+        timeline.getKeyFrames().add(keyFrame);
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+    }
+
 
     private void updatePlayerStats(int index) {
         if (game.getPlayer1Board().get(index) != null && game.getPlayer2Board().get(index) != null) {
