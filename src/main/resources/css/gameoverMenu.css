@@ -1,0 +1,61 @@
+/* Background for the entire AnchorPane */
+.root {
+    -fx-font-family: "Arial";
+    -fx-background-image: url("../images/background4.jpg"); /* Dark background */
+    -fx-background-position: center;
+    -fx-text-fill: #ffffff; /* White text */
+}
+
+/* Label styling */
+.label {
+    -fx-text-fill: #b685f1; /* Neon green text color */
+    -fx-font-family: "Inter";
+    -fx-effect: dropshadow(gaussian, #b184ef, 5, 0.5, 0, 0);
+}
+
+.button {
+    -fx-text-fill: black;
+    -fx-border-color: linear-gradient(to right, #889df1, #e78a8a);
+    -fx-border-width: 2px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.8) , 0,0,2,0 );
+}
+
+
+
+.button:hover {
+    -fx-background-color: #222222;
+}
+
+/* ScrollPane styling */
+.scroll-pane {
+    -fx-background: #0D0D0D;
+    -fx-border-color: linear-gradient(to right, rgba(162, 229, 162, 0.4), rgba(150, 86, 150, 0.4));
+    -fx-border-width: 4px;
+    -fx-effect: dropshadow(gaussian, #3c7c7c, 5, 0.5, 0, 0);
+}
+
+.hbox {
+    -fx-spacing: 10px; /* Space between cards */
+}
+
+/* VBox (Card) styling */
+.vbox {
+    -fx-background-color: #1A1A1A;
+    -fx-padding: 10px;
+    -fx-border-color: #FF00FF; /* Neon pink border */
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, #FF00FF, 5, 0.5, 0, 0);
+    -fx-alignment: center;
+}
+
+/* Label styling inside cards */
+.vbox .label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+}
+
+/* Font styling for card details */
+.card-details .label {
+    -fx-text-fill: #FFFF00; /* Neon yellow text color */
+}

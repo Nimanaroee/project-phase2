@@ -3,24 +3,17 @@ package controller;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import game.*;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import model.*;
-import javafx.animation.*;
-
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
 import javafx.util.Duration;
+import view.GameOverMenuView;
 
 public class GameMenuController {
     public static Player playingPlayer;
@@ -122,7 +115,7 @@ public class GameMenuController {
     }
 
     @FXML
-    private void onClickEndTurnButton() {
+    private void onClickEndTurnButton() throws Exception {
         if (!game.isGameOver() && playingPlayer == game.getPlayer2()) {
             if (game.getCurrentRound() < 3) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -155,31 +148,39 @@ public class GameMenuController {
             playingPlayer = game.getPlayer1();
         }
         if (game.isGameOver()) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            Player winner = game.getPlayer1().getHealth() > game.getPlayer2().getHealth() ? game.getPlayer1() : game.getPlayer2();
-            alert.setTitle("Game Over");
-            alert.setHeaderText("Game Over");
-            alert.setContentText("Player" + winner.getName() + " wins!");
-            alert.showAndWait();
-            endGame();
+//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//            Player winner = game.getPlayer1().getHealth() > game.getPlayer2().getHealth() ? game.getPlayer1() : game.getPlayer2();
+//            alert.setTitle("Game Over");
+//            alert.setHeaderText("Game Over");
+//            alert.setContentText("Player" + winner.getName() + " wins!");
+//            alert.showAndWait();
+            /// set game data
+
+            if(game.getPlayer1().getHealth() <= 0)
+                DataGame.result = Data.getLoggedInUser2().getNickname();
+            else
+                DataGame.result = Data.getLoggedInUser1().getNickname();
+
+            new GameOverMenuView().start(GraphicData.stage);
+
         }
         updateAll();
 
     }
 
-    private void endGame() {
-        if (game.getPlayer1().getHealth() <= 0) {
-            Data.getLoggedInUser1().addHistory(new DataHistory("date", Data.getLoggedInUser2().getNickname() + " Won", Data.getLoggedInUser2().getNickname(), ((Integer) Data.getLoggedInUser2().getLevel()).toString(), "100 coins"));
-            Data.getLoggedInUser2().addHistory(new DataHistory("date", Data.getLoggedInUser2().getNickname() + " Won", Data.getLoggedInUser1().getNickname(), ((Integer) Data.getLoggedInUser1().getLevel()).toString(), "100 coins"));
-        } else {
-            Data.getLoggedInUser2().addHistory(new DataHistory("date", Data.getLoggedInUser1().getNickname() + " Won", Data.getLoggedInUser1().getNickname(), ((Integer) Data.getLoggedInUser1().getLevel()).toString(), "100 coins"));
-            Data.getLoggedInUser1().addHistory(new DataHistory("date", Data.getLoggedInUser1().getNickname() + " Won", Data.getLoggedInUser2().getNickname(), ((Integer) Data.getLoggedInUser2().getLevel()).toString(), "100 coins"));
-        }
-        GsonHandler gsonHandler = new GsonHandler();
-        gsonHandler.saveUserGson();
-        //temp
-        System.exit(0);
-    }
+//    private void endGame() {
+//        if (game.getPlayer1().getHealth() <= 0) {
+//            Data.getLoggedInUser1().addHistory(new DataHistory("date", Data.getLoggedInUser2().getNickname() + " Won", Data.getLoggedInUser2().getNickname(), ((Integer) Data.getLoggedInUser2().getLevel()).toString(), "100 coins"));
+//            Data.getLoggedInUser2().addHistory(new DataHistory("date", Data.getLoggedInUser2().getNickname() + " Won", Data.getLoggedInUser1().getNickname(), ((Integer) Data.getLoggedInUser1().getLevel()).toString(), "100 coins"));
+//        } else {
+//            Data.getLoggedInUser2().addHistory(new DataHistory("date", Data.getLoggedInUser1().getNickname() + " Won", Data.getLoggedInUser1().getNickname(), ((Integer) Data.getLoggedInUser1().getLevel()).toString(), "100 coins"));
+//            Data.getLoggedInUser1().addHistory(new DataHistory("date", Data.getLoggedInUser1().getNickname() + " Won", Data.getLoggedInUser2().getNickname(), ((Integer) Data.getLoggedInUser2().getLevel()).toString(), "100 coins"));
+//        }
+//        GsonHandler gsonHandler = new GsonHandler();
+//        gsonHandler.saveUserGson();
+//        //temp
+//        System.exit(0);
+//    }
 
 
     private void endOfTheTurn() {

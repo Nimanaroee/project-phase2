@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../css/gameoverMenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameOverMenuController">
+   <Button layoutX="366.0" layoutY="262.0" mnemonicParsing="false" onAction="#onClickRematchButton" prefHeight="54.0" prefWidth="200.0" text="rematch?" />
+   <Button layoutX="396.0" layoutY="490.0" mnemonicParsing="false" onAction="#onClickBackButton" text="back to main Menu" />
+   <Label fx:id="result" layoutX="359.0" layoutY="77.0" prefHeight="17.0" prefWidth="172.0" text="Label" />
+   <Label fx:id="gambleResult" layoutX="358.0" layoutY="137.0" prefHeight="21.0" prefWidth="176.0" text="Label" />
+</AnchorPane>

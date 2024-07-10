@@ -4,6 +4,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import model.Data;
+import model.DataGame;
 import model.GraphicData;
 import model.User;
 import view.GameMenuView;
@@ -118,6 +119,7 @@ public class PregameMenuController {
             errorAlert.showAndWait();
             return;
         }
+        DataGame.gamble = minimum;
 
         setCharacter(firstCharacter, 1);
         setCharacter(secondCharacter, 2);

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class DataGame {
     public static final int updateCost = 10;
     public static final int updatePercentage = 10;
+    public static int gamble = 0;
+    public static String result;
     ArrayList<CardModel> firstDeck = new ArrayList<>();
     ArrayList<CardModel> secondDeck = new ArrayList<>();
 
