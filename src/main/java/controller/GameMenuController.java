@@ -11,7 +11,9 @@ import game.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import model.*;
+
 import java.util.ArrayList;
+
 import javafx.util.Duration;
 import view.GameOverMenuView;
 
@@ -147,23 +149,7 @@ public class GameMenuController {
             alert.showAndWait();
             playingPlayer = game.getPlayer1();
         }
-        if (game.isGameOver()) {
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            Player winner = game.getPlayer1().getHealth() > game.getPlayer2().getHealth() ? game.getPlayer1() : game.getPlayer2();
-//            alert.setTitle("Game Over");
-//            alert.setHeaderText("Game Over");
-//            alert.setContentText("Player" + winner.getName() + " wins!");
-//            alert.showAndWait();
-            /// set game data
 
-            if(game.getPlayer1().getHealth() <= 0)
-                DataGame.result = Data.getLoggedInUser2().getNickname();
-            else
-                DataGame.result = Data.getLoggedInUser1().getNickname();
-
-            new GameOverMenuView().start(GraphicData.stage);
-
-        }
         updateAll();
 
     }
@@ -423,6 +409,28 @@ public class GameMenuController {
         player2HP.setText("HP: " + game.getPlayer2().getHealth());
         Round.setText("Round: " + game.getCurrentRound());
         timelineIndicator.toFront();
+        if (game.isGameOver()) {
+            System.out.println("fuuuuuuck");
+//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//            Player winner = game.getPlayer1().getHealth() > game.getPlayer2().getHealth() ? game.getPlayer1() : game.getPlayer2();
+//            alert.setTitle("Game Over");
+//            alert.setHeaderText("Game Over");
+//            alert.setContentText("Player" + winner.getName() + " wins!");
+//            alert.showAndWait();
+            /// set game data
+
+            if (game.getPlayer1().getHealth() <= 0)
+                DataGame.result = Data.getLoggedInUser2().getNickname();
+            else
+                DataGame.result = Data.getLoggedInUser1().getNickname();
+
+            try {
+                new GameOverMenuView().start(GraphicData.stage);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+
+        }
     }
 
 
