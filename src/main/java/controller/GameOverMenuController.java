@@ -31,7 +31,6 @@ public class GameOverMenuController {
             Data.getLoggedInUser1().addHistory(new DataHistory(date, Data.getLoggedInUser2().getNickname() + " Lost", Data.getLoggedInUser2().getNickname(), ((Integer) Data.getLoggedInUser2().getLevel()).toString(), Integer.toString(-1*DataGame.gamble)));
             Data.getLoggedInUser2().addHistory(new DataHistory(date, Data.getLoggedInUser2().getNickname() + " Won", Data.getLoggedInUser1().getNickname(), ((Integer) Data.getLoggedInUser1().getLevel()).toString(), Integer.toString(DataGame.gamble)));
         }
-
     }
 
     public void onClickRematchButton(ActionEvent actionEvent) throws IOException {

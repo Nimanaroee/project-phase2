@@ -367,7 +367,8 @@ public class GameMenuController {
         player2handHbox.getChildren().clear();
         ArrayList<Card> player1Hand = (ArrayList<Card>) game.getPlayer1Hand();
         for (Card card : player1Hand) {
-            hand1.add(new CardGraphic(CardToCardConvertor.convertCardToCardModel(card)));
+            if (card!=null)
+                hand1.add(new CardGraphic(CardToCardConvertor.convertCardToCardModel(card)));
         }
         player1handHbox.getChildren().clear();
         player1handHbox.getChildren().addAll(createCardViews(hand1, true));

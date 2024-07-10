@@ -271,6 +271,34 @@
         "opponentName": "naroee",
         "opponentLevel": "1",
         "prize": "100 coins"
+      },
+      {
+        "date": "2024-07-10T13:54:46.826950",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T13:54:47.825723",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T13:54:48.821714",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T13:54:48.861237",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
       }
     ],
     "username": "parham",
@@ -532,6 +560,34 @@
         "opponentName": "pmshw",
         "opponentLevel": "1",
         "prize": "100 coins"
+      },
+      {
+        "date": "2024-07-10T13:54:46.826950",
+        "result": "naroee Lost",
+        "opponentName": "pmshw",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T13:54:47.825723",
+        "result": "naroee Lost",
+        "opponentName": "pmshw",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T13:54:48.821714",
+        "result": "naroee Lost",
+        "opponentName": "pmshw",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T13:54:48.861237",
+        "result": "naroee Lost",
+        "opponentName": "pmshw",
+        "opponentLevel": "1",
+        "prize": "0"
       }
     ],
     "username": "nima",
@@ -629,7 +685,43 @@
         "percentage": 0
       }
     ],
-    "histories": [],
+    "histories": [
+      {
+        "date": "2024-07-10T14:04:34.756127",
+        "result": "KAYAN Won",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T14:04:35.753997",
+        "result": "KAYAN Won",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T14:04:36.755065",
+        "result": "KAYAN Won",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T14:04:37.752905",
+        "result": "KAYAN Won",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T14:04:37.789027",
+        "result": "KAYAN Won",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      }
+    ],
     "username": "Kian",
     "nickname": "KAYAN",
     "password": "Passwordnadaram!4",
@@ -725,7 +817,43 @@
         "percentage": 0
       }
     ],
-    "histories": [],
+    "histories": [
+      {
+        "date": "2024-07-10T14:04:34.756127",
+        "result": "KAYAN Lost",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T14:04:35.753997",
+        "result": "KAYAN Lost",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T14:04:36.755065",
+        "result": "KAYAN Lost",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T14:04:37.752905",
+        "result": "KAYAN Lost",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T14:04:37.789027",
+        "result": "KAYAN Lost",
+        "opponentName": "KAYAN",
+        "opponentLevel": "1",
+        "prize": "0"
+      }
+    ],
     "username": "Kian",
     "nickname": "KAYAN",
     "password": "Passwordnadaram!4",
