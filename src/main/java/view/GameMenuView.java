@@ -17,6 +17,10 @@ import static model.GraphicData.*;
 public class GameMenuView extends Application {
     private Pane root;
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         User user1 = Data.getLoggedInUser1();
@@ -40,10 +44,6 @@ public class GameMenuView extends Application {
     public void updateBackground(String theme) {
         root.getStyleClass().clear();
         root.getStyleClass().add(theme);
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 
 }

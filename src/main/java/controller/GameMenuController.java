@@ -499,7 +499,7 @@ public class GameMenuController {
     }
 
     private void moveTimelineIndicator() {
-        double stepSize = player1boardHbox.getWidth() / game.getPlayer1Board().size() + 4;
+        double stepSize = player1boardHbox.getWidth() / game.getPlayer1Board().size() + 0.5;
         Timeline timeline = new Timeline();
         for (int i = 0; i < game.getPlayer1Board().size(); i++) {
             final int index = i;
