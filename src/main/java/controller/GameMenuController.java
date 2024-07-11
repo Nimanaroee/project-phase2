@@ -135,9 +135,9 @@ public class GameMenuController {
                         System.out.println("Wheel Value: " + wheelValue);
                         wheelOfChance.opacityProperty().setValue(0);
                         if (playingPlayer == game.getPlayer1()) {
-                            game.getPlayer1().setHealth(game.getPlayer1().getHealth() - wheelValue);
+                            game.getPlayer1().setHealth(game.getPlayer1().getHealth() - wheelValue / 2);
                         } else {
-                            game.getPlayer2().setHealth(game.getPlayer2().getHealth() - wheelValue);
+                            game.getPlayer2().setHealth(game.getPlayer2().getHealth() - wheelValue / 2);
                         }
                         updateAll();
                     }
