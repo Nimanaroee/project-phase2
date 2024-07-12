@@ -679,323 +679,6 @@
     "level": 1,
     "hp": 100,
     "xp": 0,
-    "gold": 100,
-    "cardModels": [
-      {
-        "name": "1stealth−helper",
-        "defence": 15,
-        "duration": 1,
-        "damage": 10,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 20,
-        "percentage": 0
-      },
-      {
-        "name": "1swift−justice",
-        "defence": 52,
-        "duration": 1,
-        "damage": 36,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 25,
-        "percentage": 0
-      },
-      {
-        "name": "1ultra−sonic−brust",
-        "defence": 20,
-        "duration": 2,
-        "damage": 33,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1ion−blast",
-        "defence": 10,
-        "duration": 2,
-        "damage": 27,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1biker−helper",
-        "defence": 45,
-        "duration": 3,
-        "damage": 20,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1sonar−strike",
-        "defence": 28,
-        "duration": 2,
-        "damage": 16,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1from−the−hip",
-        "defence": 45,
-        "duration": 1,
-        "damage": 25,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1low−blow",
-        "defence": 25,
-        "duration": 1,
-        "damage": 36,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1side−winder",
-        "defence": 35,
-        "duration": 2,
-        "damage": 26,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1acid−evaporation",
-        "defence": 35,
-        "duration": 2,
-        "damage": 30,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1bullet−strike",
-        "defence": 25,
-        "duration": 3,
-        "damage": 33,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1poison−dispersal",
-        "defence": 20,
-        "duration": 4,
-        "damage": 29,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1cryo−meltdown",
-        "defence": 28,
-        "duration": 2,
-        "damage": 20,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1flash−pellets",
-        "defence": 20,
-        "duration": 2,
-        "damage": 27,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1ion−brust",
-        "defence": 28,
-        "duration": 3,
-        "damage": 28,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1Bomb-support",
-        "defence": 0,
-        "duration": 1,
-        "damage": 28,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1BombRush-support",
-        "defence": 0,
-        "duration": 10,
-        "damage": 12,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1acidRainBomb-support",
-        "defence": 0,
-        "duration": 5,
-        "damage": 18,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1HolyShield-support",
-        "defence": 23,
-        "duration": 1,
-        "damage": 28,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1SuperiorShield-support",
-        "defence": 20,
-        "duration": 2,
-        "damage": 0,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1ShieldCummunity-support",
-        "defence": 5,
-        "duration": 5,
-        "damage": 0,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1holyHeal-support",
-        "defence": 5,
-        "duration": 0,
-        "damage": 5,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      },
-      {
-        "name": "1kate\u0027sHeal-support",
-        "defence": 10,
-        "duration": 0,
-        "damage": 10,
-        "upgradeLevel": 1,
-        "upgradeCost": 10,
-        "price": 0,
-        "percentage": 0
-      }
-    ],
-    "histories": [
-      {
-        "date": "date",
-        "result": "naroee Won",
-        "opponentName": "naroee",
-        "opponentLevel": "1",
-        "prize": "100 coins"
-      },
-      {
-        "date": "date",
-        "result": "naroee Won",
-        "opponentName": "naroee",
-        "opponentLevel": "1",
-        "prize": "100 coins"
-      },
-      {
-        "date": "date",
-        "result": "naroee Won",
-        "opponentName": "naroee",
-        "opponentLevel": "1",
-        "prize": "100 coins"
-      },
-      {
-        "date": "date",
-        "result": "naroee Won",
-        "opponentName": "naroee",
-        "opponentLevel": "1",
-        "prize": "100 coins"
-      },
-      {
-        "date": "date",
-        "result": "naroee Won",
-        "opponentName": "naroee",
-        "opponentLevel": "1",
-        "prize": "100 coins"
-      },
-      {
-        "date": "2024-07-10T13:54:46.826950",
-        "result": "naroee Won",
-        "opponentName": "naroee",
-        "opponentLevel": "1",
-        "prize": "0"
-      },
-      {
-        "date": "2024-07-10T13:54:47.825723",
-        "result": "naroee Won",
-        "opponentName": "naroee",
-        "opponentLevel": "1",
-        "prize": "0"
-      },
-      {
-        "date": "2024-07-10T13:54:48.821714",
-        "result": "naroee Won",
-        "opponentName": "naroee",
-        "opponentLevel": "1",
-        "prize": "0"
-      },
-      {
-        "date": "2024-07-10T13:54:48.861237",
-        "result": "naroee Won",
-        "opponentName": "naroee",
-        "opponentLevel": "1",
-        "prize": "0"
-      },
-      {
-        "date": "2024-07-11T15:30:59.874225",
-        "result": "pmshw Won",
-        "opponentName": "naroee",
-        "opponentLevel": "1",
-        "prize": "0"
-      }
-    ],
-    "username": "parham",
-    "nickname": "pmshw",
-    "password": "abcD1234!",
-    "email": "parham@gmail.com",
-    "question": "• 2-What is your favourite color ?",
-    "answer": "Brown",
-    "character": 0
-  },
-  {
-    "level": 1,
-    "hp": 100,
-    "xp": 0,
     "gold": 1000000,
     "cardModels": [
       {
@@ -1278,6 +961,13 @@
         "opponentName": "pmshw",
         "opponentLevel": "1",
         "prize": "0"
+      },
+      {
+        "date": "2024-07-11T17:27:48.017645",
+        "result": "naroee Lost",
+        "opponentName": "pmshw",
+        "opponentLevel": "1",
+        "prize": "0"
       }
     ],
     "username": "nima",
@@ -1286,6 +976,350 @@
     "email": "nima@gmail.com",
     "question": "• 2-What is your favourite color ?",
     "answer": "blue",
+    "character": 0
+  },
+  {
+    "level": 1,
+    "hp": 100,
+    "xp": 0,
+    "gold": 100,
+    "cardModels": [
+      {
+        "name": "1stealth−helper",
+        "defence": 15,
+        "duration": 1,
+        "damage": 10,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 20,
+        "percentage": 0
+      },
+      {
+        "name": "1swift−justice",
+        "defence": 52,
+        "duration": 1,
+        "damage": 36,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 25,
+        "percentage": 0
+      },
+      {
+        "name": "1ultra−sonic−brust",
+        "defence": 20,
+        "duration": 2,
+        "damage": 33,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1ion−blast",
+        "defence": 10,
+        "duration": 2,
+        "damage": 27,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1biker−helper",
+        "defence": 45,
+        "duration": 3,
+        "damage": 20,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1sonar−strike",
+        "defence": 28,
+        "duration": 2,
+        "damage": 16,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1from−the−hip",
+        "defence": 45,
+        "duration": 1,
+        "damage": 25,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1low−blow",
+        "defence": 25,
+        "duration": 1,
+        "damage": 36,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1side−winder",
+        "defence": 35,
+        "duration": 2,
+        "damage": 26,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1acid−evaporation",
+        "defence": 35,
+        "duration": 2,
+        "damage": 30,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1bullet−strike",
+        "defence": 25,
+        "duration": 3,
+        "damage": 33,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1poison−dispersal",
+        "defence": 20,
+        "duration": 4,
+        "damage": 29,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1cryo−meltdown",
+        "defence": 28,
+        "duration": 2,
+        "damage": 20,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1flash−pellets",
+        "defence": 20,
+        "duration": 2,
+        "damage": 27,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1ion−brust",
+        "defence": 28,
+        "duration": 3,
+        "damage": 28,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1Bomb-support",
+        "defence": 0,
+        "duration": 1,
+        "damage": 28,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1BombRush-support",
+        "defence": 0,
+        "duration": 10,
+        "damage": 12,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1acidRainBomb-support",
+        "defence": 0,
+        "duration": 5,
+        "damage": 18,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1HolyShield-support",
+        "defence": 23,
+        "duration": 1,
+        "damage": 28,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1SuperiorShield-support",
+        "defence": 20,
+        "duration": 2,
+        "damage": 0,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1ShieldCummunity-support",
+        "defence": 5,
+        "duration": 5,
+        "damage": 0,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1holyHeal-support",
+        "defence": 5,
+        "duration": 0,
+        "damage": 5,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "1kate\u0027sHeal-support",
+        "defence": 10,
+        "duration": 0,
+        "damage": 10,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2HolyShield-support",
+        "defence": 23,
+        "duration": 1,
+        "damage": 28,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      },
+      {
+        "name": "2Bomb-support",
+        "defence": 0,
+        "duration": 1,
+        "damage": 28,
+        "upgradeLevel": 1,
+        "upgradeCost": 10,
+        "price": 0,
+        "percentage": 0
+      }
+    ],
+    "histories": [
+      {
+        "date": "date",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "100 coins"
+      },
+      {
+        "date": "date",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "100 coins"
+      },
+      {
+        "date": "date",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "100 coins"
+      },
+      {
+        "date": "date",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "100 coins"
+      },
+      {
+        "date": "date",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "100 coins"
+      },
+      {
+        "date": "2024-07-10T13:54:46.826950",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T13:54:47.825723",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T13:54:48.821714",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-10T13:54:48.861237",
+        "result": "naroee Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-11T15:30:59.874225",
+        "result": "pmshw Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      },
+      {
+        "date": "2024-07-11T17:27:48.017645",
+        "result": "pmshw Won",
+        "opponentName": "naroee",
+        "opponentLevel": "1",
+        "prize": "0"
+      }
+    ],
+    "username": "parham",
+    "nickname": "pmshw",
+    "password": "abcD1234!",
+    "email": "parham@gmail.com",
+    "question": "• 2-What is your favourite color ?",
+    "answer": "Brown",
     "character": 0
   }
 ]
